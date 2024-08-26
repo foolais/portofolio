@@ -1,27 +1,8 @@
-import { Home, GitBranch, CodeXml, Contact } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "../components/ui/button";
 import React from "react";
 import { cn } from "@/lib/utils";
-import { Separator } from "./ui/separator";
-
-const icons = [
-  {
-    icon: Home,
-    name: "Home",
-  },
-  {
-    icon: GitBranch,
-    name: "Carrer",
-  },
-  {
-    icon: CodeXml,
-    name: "Projects",
-  },
-  {
-    icon: Contact,
-    name: "Contact",
-  },
-];
+import { Separator } from "../components/ui/separator";
+import { navbarData } from "@/data/data";
 
 const Navbar = ({ className }: { className?: string }) => {
   return (
@@ -34,7 +15,7 @@ const Navbar = ({ className }: { className?: string }) => {
             "md:flex-col md:rounded-lg md:gap-0 md:justify-start md:py-6 md:px2 md:items-start"
           )}
         >
-          {icons.map(({ icon: Icon, name }, index) => (
+          {navbarData.map(({ icon: Icon, name }, index) => (
             <React.Fragment key={index}>
               <Button
                 id={name}
@@ -42,13 +23,19 @@ const Navbar = ({ className }: { className?: string }) => {
                 size={"iconText"}
                 className={cn(
                   "flex flex-col items-center justify-center gap-1 icon-wrapper",
-                  "md:flex-row md:gap-4 md:w-full md:justify-start"
+                  "md:flex-row md:gap-4 md:w-full md:justify-start",
+                  name === "Contact" ? "md:hidden" : ""
                 )}
               >
                 <Icon className="icon-size" />
-                <p className="text-xs sm:text-sm">{name}</p>
+                <p className="text-xs sm:text-sm md:text-lg">{name}</p>
               </Button>
-              <Separator className="mb-2.5 hidden md:block" />
+              <Separator
+                className={cn(
+                  "mb-2.5 hidden md:block",
+                  name === "Contact" ? "md:hidden" : ""
+                )}
+              />
             </React.Fragment>
           ))}
         </div>

@@ -1,4 +1,3 @@
-import Navbar from "./Navbar";
-import Contact from "./Contact";
+import ContactInfo from "./ContactInfo";
 
-export { Navbar, Contact };
+export { ContactInfo };

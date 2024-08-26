@@ -1,21 +1,21 @@
-import { Contact, Navbar } from "@/components";
+import { ContactInfo } from "@/components";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import Navbar from "./Navbar";
 
 const ContentLayout = () => {
   return (
     <div
       className={cn(
         "max-h-screen h-screen w-full relative bg-slate-50",
-        "md:static md:grid md:grid-cols-3 md:p-8 md:gap-4",
-        "lg:grid-cols-4 xl:grid-cols-5"
+        "md:flex md:gap-6 md:p-8"
       )}
     >
-      <div className="md:flex md:flex-col md:gap-24">
+      <div className="md:flex md:flex-col md:gap-24 md:w-[275px] lg:w-[300px]">
         <Navbar />
-        <Contact className="hidden md:block" />
+        <ContactInfo className="hidden md:block" />
       </div>
-      <div className="md:col-span-2 lg:col-span-3 xl:col-span-4">
+      <div className="md:w-auto">
         <Button>Hello</Button>
       </div>
     </div>
