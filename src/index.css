@@ -72,7 +72,7 @@
   .icon-wrapper {
     font-size: 20px;
 
-    @screen sm {
+    @screen md {
       font-size: 25px;
     }
   }
@@ -80,5 +80,6 @@
   .icon-size {
     width: 1em;
     height: 1em;
+    color: hsl(var(--primary));
   }
 }
