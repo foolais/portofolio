@@ -4,11 +4,11 @@
 
 @layer base {
   :root {
-    --background: 207 95% 8%;
+    --background: 100 100% 99%;
     --foreground: 222.2 84% 4.9%;
-    --card: 207 95% 8%;
+    --card: 100 100% 99%;
     --card-foreground: 222.2 84% 4.9%;
-    --popover: 207 95% 8%;
+    --popover: 100 100% 99%;
     --popover-foreground: 222.2 84% 4.9%;
     --primary: 174 62% 47%;
     --primary-foreground: 207 95% 8%;
@@ -20,7 +20,7 @@
     --accent-foreground: 222.2 47.4% 11.2%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
+    --border: 207 95% 8%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
     --radius: 0.5rem;
@@ -65,5 +65,20 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .icon-wrapper {
+    font-size: 20px;
+
+    @screen sm {
+      font-size: 25px;
+    }
+  }
+
+  .icon-size {
+    width: 1em;
+    height: 1em;
   }
 }
