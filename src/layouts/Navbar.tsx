@@ -27,7 +27,7 @@ const Navbar = ({ className }: Props) => {
                 size={"iconText"}
                 className={cn(
                   "flex flex-col items-center justify-center gap-1 icon-wrapper",
-                  "md:flex-row md:gap-4 md:w-full md:justify-start",
+                  "md:flex-row md:gap-3 md:w-full md:justify-start",
                   name === "Contact" ? "md:hidden" : ""
                 )}
               >

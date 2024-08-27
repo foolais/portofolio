@@ -11,7 +11,7 @@ const Layout = () => {
         "md:flex md:gap-6 md:p-8"
       )}
     >
-      <div className="md:flex md:flex-col md:gap-24 md:min-w-[275px] lg:min-w-[300px]">
+      <div className="md:flex md:flex-col md:gap-24 md:min-w-[275px] lg:min-w-[320px]">
         <Navbar />
         <ContactInfo className="hidden md:block" />
       </div>

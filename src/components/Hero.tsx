@@ -3,20 +3,20 @@ import { Profile } from "@/assets/images/images";
 import Typewriter from "typewriter-effect";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
-import { Download } from "lucide-react";
+import { Contact, Download } from "lucide-react";
 
 const Hero = () => {
   return (
     <div
       className={cn(
         "flex flex-col items-center justify-center min-h-screen xl:min-h-full relative mx-auto",
-        "xl:flex-row-reverse xl:items-center xl:justify-between xl:gap-8 xl:w-11/12 "
+        "md:justify-start xl:flex-row-reverse xl:items-center xl:justify-between xl:gap-8 xl:w-11/12 "
       )}
     >
       <div
         className={cn(
           "relative w-max h-max group cursor-pointer flex items-end justify-center",
-          "xl:justify-between xl:w-1/2 mt-16 sm:mt-10 xl:mt-32"
+          "xl:justify-between xl:w-1/2 mt-16 sm:mt-10 lg:mt-20 xl:mt-32"
         )}
       >
         <div
@@ -51,7 +51,7 @@ const Hero = () => {
       <div
         className={cn(
           "mt-14 flex flex-col items-center md:leading-6 gap-1",
-          "xl:-mt-4 xl:items-start xl:w-1/2"
+          "xl:items-start xl:w-1/2"
         )}
       >
         <p className="text-xl md:text-2xl font-bold md:mb-2">Hello, I'm</p>
@@ -70,19 +70,25 @@ const Hero = () => {
         </div>
         <div className="w-11/12 sm:w-3/4 mt-4 md:mt-6">
           <p className="text-sm md:text-base text-center xl:text-justify">
-            An enthusiastic frontend developer from Yogyakarta, Indonesia. With
-            a passion for creating intuitive web experiences, I specialize in
-            React and Vue.js.
+            An enthusiastic{" "}
+            <span className="text-primary font-semibold">
+              frontend developer{" "}
+            </span>{" "}
+            from
+            <span className="text-primary font-semibold"> Yogyakarta</span>,
+            Indonesia. With a passion for creating intuitive web experiences, I
+            specialize in React and Vue.js.
           </p>
         </div>
         {/* Contact buttons only for MD breakpoint and below */}
         <div className="flex items-center justify-center gap-4 mt-4">
-          <Button className="w-full icon-wrapper flex items-center justify-center text-secondary gap-2 px-4">
+          <Button className="flex items-center justify-center text-secondary gap-2 px-4">
             <span className="text-base font-semibold">Download CV</span>
             <Download color="white" size={20} />
           </Button>
-          <Button className="w-full md:hidden text-secondary">
-            Contact Me
+          <Button className="md:hidden text-secondary flex items-center justify-center gap-2 px-4">
+            <span className="text-base font-semibold">Contact Me</span>
+            <Contact color="white" size={20} />
           </Button>
         </div>
       </div>
