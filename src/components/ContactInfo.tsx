@@ -10,7 +10,12 @@ interface Props {
 
 const ContactInfo = ({ className }: Props) => {
   return (
-    <div className={cn(className, "bg-secondary shadow rounded-lg p-6")}>
+    <div
+      className={cn(
+        className,
+        "bg-secondary shadow rounded-lg p-6 border-[1px] border-primary"
+      )}
+    >
       <div className="flex items-center gap-3 p-1 icon-wrapper">
         <Contact className="icon-size" />
         <p className="text-sm font-semibold lg:text-base">Contact Me</p>

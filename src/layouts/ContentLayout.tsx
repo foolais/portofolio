@@ -11,7 +11,7 @@ const ContentLayout = ({ className }: Props) => {
     <ScrollArea
       className={cn(
         className,
-        "bg-secondary shadow rounded-lg p-6 pb-32 min-h-[80vh] -mt-20",
+        "bg-secondary shadow rounded-lg p-6 pb-32 min-h-[80vh] -mt-20 border-[1px] border-primary",
         "md:mt-0 md:p-6"
       )}
     >
