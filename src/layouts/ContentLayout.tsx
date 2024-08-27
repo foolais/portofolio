@@ -1,24 +1,22 @@
-import { ContactInfo } from "@/components";
-import { Button } from "@/components/ui/button";
+import { Hero } from "@/components";
+import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
-import Navbar from "./Navbar";
 
-const ContentLayout = () => {
+interface Props {
+  className?: string;
+}
+
+const ContentLayout = ({ className }: Props) => {
   return (
-    <div
+    <ScrollArea
       className={cn(
-        "max-h-screen h-screen w-full relative bg-slate-50",
-        "md:flex md:gap-6 md:p-8"
+        className,
+        "bg-secondary shadow rounded-lg p-6 pb-32 min-h-[80vh] -mt-20",
+        "md:mt-0 md:p-6"
       )}
     >
-      <div className="md:flex md:flex-col md:gap-24 md:w-[275px] lg:w-[300px]">
-        <Navbar />
-        <ContactInfo className="hidden md:block" />
-      </div>
-      <div className="md:w-auto">
-        <Button>Hello</Button>
-      </div>
-    </div>
+      <Hero />
+    </ScrollArea>
   );
 };
 

@@ -1,7 +1,7 @@
-import ContentLayout from "@/layouts/ContentLayout";
+import Layout from "@/layouts/Layout";
 
 const Homepages = () => {
-  return <ContentLayout />;
+  return <Layout />;
 };
 
 export default Homepages;

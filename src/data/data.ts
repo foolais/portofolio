@@ -48,8 +48,8 @@ export const contactData = [
     link: "https://www.instagram.com/wahyu_esya/",
   },
   {
-    text: "085291369486",
+    text: "089524038348",
     icon: WhatsApp,
-    link: "https://wa.me/085291369486",
+    link: "https://wa.me/089524038348",
   },
 ];
