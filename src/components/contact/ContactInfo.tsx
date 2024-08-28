@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
-import { Separator } from "./ui/separator";
+import { Separator } from "../ui/separator";
 import { Contact, ExternalLink } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import { contactData } from "@/data/data";
 
 interface Props {
