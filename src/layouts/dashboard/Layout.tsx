@@ -1,6 +1,7 @@
 import { Carrer } from "@/components/carrer";
 import { Navbar } from "@/components/navigation";
 import { Profile } from "@/components/profle";
+import { TechStack } from "@/components/techStack";
 
 const Layout = () => {
   return (
@@ -8,6 +9,7 @@ const Layout = () => {
       <Navbar />
       <Profile />
       <Carrer />
+      <TechStack />
     </div>
   );
 };

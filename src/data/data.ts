@@ -6,6 +6,20 @@ import {
   WhatsApp,
 } from "@/assets/icons/icon";
 import { CodeXml, Contact, GitBranch, Home } from "lucide-react";
+import {
+  CSS,
+  Express,
+  Git,
+  HTML,
+  JS,
+  MongoDB,
+  Node,
+  React,
+  Sass,
+  Tailwind,
+  TS,
+  Vue,
+} from "@/assets/icons/tech";
 
 export const navbarData = [
   {
@@ -66,5 +80,56 @@ export const jobData = [
     position: "Frontend Developer",
     date: "Dec 2022 - Dec 2023",
     location: "Yogyakarta",
+  },
+];
+
+export const techStackData = [
+  {
+    name: "HTML",
+    image: HTML,
+  },
+  {
+    name: "CSS",
+    image: CSS,
+  },
+  {
+    name: "Sass",
+    image: Sass,
+  },
+  {
+    name: "Tailwind CSS",
+    image: Tailwind,
+  },
+  {
+    name: "JavaScript",
+    image: JS,
+  },
+  {
+    name: "TypeScript",
+    image: TS,
+  },
+  {
+    name: "React.js",
+    image: React,
+  },
+  {
+    name: "Vue.js",
+    image: Vue,
+  },
+  {
+    name: "Node.js",
+    image: Node,
+  },
+  {
+    name: "Express.js",
+    image: Express,
+  },
+  {
+    name: "MongoDB",
+    image: MongoDB,
+  },
+  {
+    name: "Git",
+    image: Git,
   },
 ];

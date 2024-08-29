@@ -20,7 +20,7 @@ const Description = ({ text, Icon }: DescriptionProps) => {
 const Carrer = () => {
   return (
     <div className="w-full px-6 mt-8">
-      <Title text="Carrer" />
+      <Title text="Carrer" isBtnShow={true} />
       {jobData.map((job) => {
         return (
           <Card key={job.company} className="my-4 flex items-center px-6">
