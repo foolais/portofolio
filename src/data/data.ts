@@ -5,7 +5,7 @@ import {
   LinkedIn,
   WhatsApp,
 } from "@/assets/icons/icon";
-import { CodeXml, Contact, GitBranch, Home } from "lucide-react";
+import { CodeXml, Rocket, GitBranch, Home } from "lucide-react";
 import {
   CSS,
   Express,
@@ -35,7 +35,7 @@ export const navbarData = [
     name: "Projects",
   },
   {
-    icon: Contact,
+    icon: Rocket,
     name: "Contact",
   },
 ];

@@ -1,5 +1,5 @@
 import { Button } from "../ui/button";
-import { Contact, Download } from "lucide-react";
+import { Rocket, Download } from "lucide-react";
 import { ProfileHero } from "./ProfileHero";
 
 const Profile = () => {
@@ -24,9 +24,12 @@ const Profile = () => {
           <span className="text-base font-bold">Download CV</span>
           <Download color="hsl(var(--background))" size={20} />
         </Button>
-        <Button className="text-secondary items-center justify-center gap-2 px-4">
+        <Button
+          variant={"outline"}
+          className="text-secondary items-center justify-center gap-2 px-4"
+        >
           <span className="text-base font-semibold">Contact Me</span>
-          <Contact color="hsl(var(--background))" size={20} />
+          <Rocket color="hsl(var(--foreground))" size={20} />
         </Button>
       </div>
     </div>

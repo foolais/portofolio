@@ -31,7 +31,7 @@ const Carrer = () => {
               </div>
               <div>
                 <CardTitle>{job.position}</CardTitle>
-                <CardDescription className="grid gap-2 pt-1">
+                <CardDescription className="grid gap-2 pt-2">
                   <Description text={job.company} Icon={Building2} />
                   <Description text={job.location} Icon={MapPin} />
                   <Description text={job.date} Icon={CalendarDays} />
