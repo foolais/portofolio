@@ -17,7 +17,7 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <RouterProvider router={router} />
-      <BackgroundBeams />
+      <BackgroundBeams className="-z-10" />
     </ThemeProvider>
   </StrictMode>
 );
