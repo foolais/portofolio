@@ -5,14 +5,14 @@ import { ProfilePicturue, Waves } from "@/assets/images/images";
 export const ProfileHero = () => {
   return (
     <div className="w-full relative pt-10">
-      <div className="w-full absolute top-0 z-0 shadow">
+      <div className="w-full h-full absolute top-0 z-0 shadow">
         <img
           src={Waves}
           alt="Waves"
           className="w-full h-full object-cover object-top"
           loading="lazy"
         />
-        <div className="w-full h-full absolute top-0 z-10 gradient"></div>
+        <div className="w-full h-[105%] absolute top-0 z-10 gradient"></div>
       </div>
       <div className="px-4 flex items-end gap-4 z-20">
         <Avatar className="border-b-4 border-primary sm:w-40 sm:h-40">
