@@ -1,4 +1,5 @@
 import { Carrer } from "@/components/carrer";
+import CardContact from "@/components/contact/CardContact";
 import { Navbar } from "@/components/navigation";
 import { Profile } from "@/components/profle";
 import { TechStack } from "@/components/techStack";
@@ -11,6 +12,7 @@ const Layout = () => {
       <Profile />
       <Carrer />
       <TechStack />
+      <CardContact />
       <div className="p-12" />
     </ScrollArea>
   );
