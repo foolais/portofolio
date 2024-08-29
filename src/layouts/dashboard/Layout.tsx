@@ -7,13 +7,15 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Layout = () => {
   return (
-    <ScrollArea className="mx-auto md:flex md:11/12 h-screen">
-      <Navbar />
-      <Profile />
-      <Carrer />
-      <TechStack />
-      <CardContact />
-      <div className="p-12" />
+    <ScrollArea className="mx-auto md:flex md:11/12">
+      <div className="w-[100vw] h-screen">
+        <Navbar />
+        <Profile />
+        <Carrer />
+        <TechStack />
+        <CardContact />
+        <div className="p-12" />
+      </div>
     </ScrollArea>
   );
 };
