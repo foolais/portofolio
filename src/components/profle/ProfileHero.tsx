@@ -5,7 +5,7 @@ import { ProfilePicturue, Waves } from "@/assets/images/images";
 export const ProfileHero = () => {
   return (
     <div className="w-full relative pt-10">
-      <div className="w-full h-[70%] absolute top-0 z-0 shadow">
+      <div className="w-full absolute top-0 z-0 shadow">
         <img
           src={Waves}
           alt="Waves"
@@ -20,10 +20,10 @@ export const ProfileHero = () => {
           <AvatarFallback>WSYN</AvatarFallback>
         </Avatar>
         <div className="w-full z-10 mb-3">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-extrabold sm:tracking-wider">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-extrabold sm:tracking-wider leading-6">
             Hi, I'm <span className="text-primary">Wahyu</span> 👋
           </h1>
-          <div className="text-lg md:text-xl lg:text-2xl font-bold md:mt-1 sm:tracking-wide">
+          <div className="text-lg md:text-xl lg:text-2xl font-bold md:mt-1 sm:tracking-wide leading-6">
             <Typewriter
               options={{
                 strings: ["Frontend Developer", "Yogyakarta"],

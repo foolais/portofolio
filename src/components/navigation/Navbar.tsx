@@ -21,8 +21,7 @@ const Navbar = ({ className }: Props) => {
         <div
           className={cn(
             "relative bg-secondary shadow gap-4 flex items-center justify-center rounded-3xl px-6 py-2",
-            "md:bg-background md:gap-0 md:px-0 md:py-0 md:flex-col md:mt-10",
-            ""
+            "md:bg-background md:gap-0 md:px-0 md:py-0 md:flex-col md:mt-10"
           )}
         >
           {navbarData.map(({ icon: Icon, name }, index) => (

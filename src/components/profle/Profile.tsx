@@ -6,7 +6,7 @@ const Profile = () => {
   return (
     <div className="max-h-screen">
       <ProfileHero />
-      <div className="w-11/12 md:w-5/6 font-semibold mt-6 px-4">
+      <div className="w-11/12 md:w-5/6 font-semibold mt-7 px-4">
         <p className="text-sm md:text-base 2xl:text-lg leading-6 tracking-wide">
           A dedicated{" "}
           <span className="text-primary font-bold">frontend developer </span>{" "}

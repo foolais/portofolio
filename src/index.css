@@ -106,8 +106,8 @@
   .gradient {
     background: linear-gradient(
       0deg,
-      hsl(var(--background)) 14%,
-      transparent 78%
+      hsl(var(--background)) 35%,
+      transparent 85%
     );
   }
 }
