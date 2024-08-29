@@ -13,9 +13,9 @@ const CardContact = () => {
   return (
     <div className="w-full px-6 mt-6">
       <Title text="Contact" isBtnShow={true} />
-      <Card className="w-[400px] my-4 dark:hover:bg-secondary/50 hover:cursor-default">
+      <Card className="sm:w-[450px] my-4 dark:hover:bg-secondary/50 hover:cursor-default">
         <CardHeader>
-          <CardTitle>Get In Touch</CardTitle>
+          <CardTitle className="text-xl font-bold">Get In Touch</CardTitle>
           <CardDescription>
             Feel free to contact me for any work or suggestions.
           </CardDescription>
