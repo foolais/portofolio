@@ -10,7 +10,7 @@ const TechStack = () => {
         {techStackData.map(({ name, image }) => {
           return (
             <Card key={name} className="w-max">
-              <CardHeader className="py-2 px-4 flex-row justify-center items-center gap-2">
+              <CardHeader className="py-2 px-4 flex-row justify-center items-center gap-2 space-y-0">
                 <img
                   src={image}
                   alt={name}

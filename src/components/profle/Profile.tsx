@@ -7,7 +7,7 @@ const Profile = () => {
     <div className="max-h-screen">
       <ProfileHero />
       <div className="w-11/12 md:w-5/6 font-semibold mt-7 px-4">
-        <p className="text-sm md:text-base 2xl:text-lg leading-6 tracking-wide">
+        <p className="text-sm md:text-base 2xl:text-lg leading-5 tracking-wide">
           A dedicated{" "}
           <span className="text-primary font-bold">frontend developer </span>{" "}
           based in <span className="text-primary font-bold"> Yogyakarta</span>,

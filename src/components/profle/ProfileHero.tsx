@@ -20,10 +20,10 @@ export const ProfileHero = () => {
           <AvatarFallback>WSYN</AvatarFallback>
         </Avatar>
         <div className="w-full z-10 mb-3">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-extrabold sm:tracking-wider leading-6">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl font-extrabold sm:tracking-wider leading-5">
             Hi, I'm <span className="text-primary">Wahyu</span> 👋
           </h1>
-          <div className="text-lg md:text-xl lg:text-2xl font-bold md:mt-1 sm:tracking-wide leading-6">
+          <div className="text-lg md:text-xl lg:text-2xl font-bold md:mt-1 sm:tracking-wide leading-5">
             <Typewriter
               options={{
                 strings: ["Frontend Developer", "Yogyakarta"],

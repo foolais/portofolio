@@ -71,7 +71,7 @@ export const contactData = [
 export const jobData = [
   {
     company: "Widya Robotics",
-    position: "Frontend Developer",
+    position: "Intern Frontend Developer",
     date: "Feb 2022 - Aug 2022",
     location: "Yogyakarta",
   },
