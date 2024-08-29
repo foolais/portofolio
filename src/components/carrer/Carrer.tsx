@@ -1,21 +1,7 @@
 import { Briefcase, Building2, CalendarDays, MapPin } from "lucide-react";
 import { Title } from "../title";
 import { Card, CardDescription, CardHeader, CardTitle } from "../ui/card";
-
-const jobData = [
-  {
-    company: "PT Widya Robotics",
-    position: "Frontend Developer",
-    date: "Feb 2022 - Aug 2022",
-    location: "Yogyakarta",
-  },
-  {
-    company: "Tamtech Internasional",
-    position: "Frontend Developer",
-    date: "Dec 2022 - Dec 2023",
-    location: "Yogyakarta",
-  },
-];
+import { jobData } from "@/data/data";
 
 interface DescriptionProps {
   text: string;

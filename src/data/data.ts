@@ -53,3 +53,18 @@ export const contactData = [
     link: "https://wa.me/089524038348",
   },
 ];
+
+export const jobData = [
+  {
+    company: "Widya Robotics",
+    position: "Frontend Developer",
+    date: "Feb 2022 - Aug 2022",
+    location: "Yogyakarta",
+  },
+  {
+    company: "Tamtech Internasional",
+    position: "Frontend Developer",
+    date: "Dec 2022 - Dec 2023",
+    location: "Yogyakarta",
+  },
+];
