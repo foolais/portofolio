@@ -70,27 +70,6 @@ export const contactData = [
 
 export const jobData = [
   {
-    company: "PT Widya Inovasi Indonesia",
-    position: "Intern Frontend Developer",
-    date: "Feb 2022 - Aug 2022",
-    location: "Yogyakarta",
-    description: [
-      "Developing a web dashboard for order an API Key using React JS.",
-      "Implementing Tailwind CSS for styling website.",
-      "Implementing consume REST API for communication with backend.",
-    ],
-    technologies: [
-      {
-        name: "React.js",
-        image: React,
-      },
-      {
-        name: "Tailwind CSS",
-        image: Tailwind,
-      },
-    ],
-  },
-  {
     company: "Tamadun Teknologi Internasional",
     position: "Frontend Developer",
     date: "Dec 2022 - Dec 2023",
@@ -110,6 +89,27 @@ export const jobData = [
       {
         name: "SASS",
         image: Sass,
+      },
+    ],
+  },
+  {
+    company: "PT Widya Inovasi Indonesia",
+    position: "Intern Frontend Developer",
+    date: "Feb 2022 - Aug 2022",
+    location: "Yogyakarta",
+    description: [
+      "Developing a web dashboard for order an API Key using React JS.",
+      "Implementing Tailwind CSS for styling website.",
+      "Implementing consume REST API for communication with backend.",
+    ],
+    technologies: [
+      {
+        name: "React.js",
+        image: React,
+      },
+      {
+        name: "Tailwind CSS",
+        image: Tailwind,
       },
     ],
   },
@@ -163,5 +163,22 @@ export const techStackData = [
   {
     name: "Git",
     image: Git,
+  },
+];
+
+export const educationData = [
+  {
+    name: "Binus Online University",
+    location: "Online",
+    date: "Mei 2023 - Current",
+    major: "Computer Science",
+    degree: "Bachelor Degree",
+  },
+  {
+    name: "Telkom University",
+    location: "Bandung",
+    date: "Aug 2019 - Dec 2022",
+    major: "Computer Technology ",
+    degree: "Associate Degree",
   },
 ];

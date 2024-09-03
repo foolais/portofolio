@@ -1,6 +1,15 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
+import { DescriptionProps } from "@/types/types";
+
+interface CardHeaderComponentProps
+  extends React.HTMLAttributes<HTMLDivElement> {
+  title: string;
+  description: DescriptionProps[];
+  icon: React.ReactNode;
+  isShowDetails?: boolean;
+}
 
 const Card = React.forwardRef<
   HTMLDivElement,
@@ -29,6 +38,40 @@ const CardHeader = React.forwardRef<
 ));
 CardHeader.displayName = "CardHeader";
 
+const CardHeaderComponent = React.forwardRef<
+  HTMLDivElement,
+  CardHeaderComponentProps
+>(
+  (
+    { title, description, icon, isShowDetails = false, className, ...props },
+    ref
+  ) => (
+    <div
+      ref={ref}
+      className={cn(
+        "flex flex-row items-center gap-6 space-y-1.5 p-6",
+        isShowDetails && "pb-4",
+        className
+      )}
+      {...props}
+    >
+      <div className="p-4 md:p-6 bg-background w-max h-max rounded-xl shadow">
+        {icon}
+      </div>
+      <div>
+        <CardTitle>{title}</CardTitle>
+        <div className="grid gap-2 pt-2">
+          {description.map(({ text, Icon }, index) => (
+            <CardDescriptionList key={index} text={text} Icon={Icon} />
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+);
+
+CardHeaderComponent.displayName = "CardHeaderComponent";
+
 const CardTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
@@ -53,6 +96,23 @@ const CardDescription = React.forwardRef<
 ));
 CardDescription.displayName = "CardDescription";
 
+const CardDescriptionList = React.forwardRef<
+  HTMLParagraphElement,
+  DescriptionProps
+>(({ text, Icon, ...props }, ref) => (
+  <p
+    ref={ref}
+    className={cn(
+      "flex items-start gap-1.5 text-sm text-slate-500 dark:text-slate-400"
+    )}
+    {...props}
+  >
+    <Icon size={20} color="hsl(var(--primary))" />
+    <span>{text}</span>
+  </p>
+));
+CardDescriptionList.displayName = "CardDescriptionList";
+
 const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
@@ -76,6 +136,7 @@ CardFooter.displayName = "CardFooter";
 export {
   Card,
   CardHeader,
+  CardHeaderComponent,
   CardFooter,
   CardTitle,
   CardDescription,
