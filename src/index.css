@@ -80,7 +80,6 @@
   .icon-size {
     width: 1em;
     height: 1em;
-    color: hsl(var(--primary));
   }
 
   .text-outlined {
