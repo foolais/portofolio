@@ -1,4 +1,4 @@
-import { Carrer } from "@/components/carrer";
+import { Career, CareerCard } from "@/components/career";
 import CardContact from "@/components/contact/CardContact";
 import { Profile } from "@/components/profle";
 import { TechStack } from "@/components/techStack";
@@ -8,7 +8,9 @@ const Layout = () => {
   return (
     <MainLayout>
       <Profile />
-      <Carrer />
+      <Career>
+        <CareerCard />
+      </Career>
       <TechStack />
       <CardContact />
     </MainLayout>

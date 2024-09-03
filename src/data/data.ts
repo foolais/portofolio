@@ -70,16 +70,48 @@ export const contactData = [
 
 export const jobData = [
   {
-    company: "Widya Robotics",
+    company: "PT Widya Inovasi Indonesia",
     position: "Intern Frontend Developer",
     date: "Feb 2022 - Aug 2022",
     location: "Yogyakarta",
+    description: [
+      "Developing a web dashboard for order an API Key using React JS.",
+      "Implementing Tailwind CSS for styling website.",
+      "Implementing consume REST API for communication with backend.",
+    ],
+    technologies: [
+      {
+        name: "React.js",
+        image: React,
+      },
+      {
+        name: "Tailwind CSS",
+        image: Tailwind,
+      },
+    ],
   },
   {
-    company: "Tamtech Internasional",
+    company: "Tamadun Teknologi Internasional",
     position: "Frontend Developer",
     date: "Dec 2022 - Dec 2023",
     location: "Yogyakarta",
+    description: [
+      "Implementing application using Vue.js framework and Vuetify.",
+      "Developing a dynamic client configuration for enhanced adaptability and user interaction.",
+      "Developing front-end notification alerts using a service worker for seamless and responsive user interactions.",
+      "Fixing and discovering bugs while enhancing the application.",
+      "Collaborated with team members to improve and enhance the application.",
+    ],
+    technologies: [
+      {
+        name: "Vue.js",
+        image: Vue,
+      },
+      {
+        name: "SASS",
+        image: Sass,
+      },
+    ],
   },
 ];
 
