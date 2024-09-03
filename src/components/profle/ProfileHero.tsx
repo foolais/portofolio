@@ -1,14 +1,14 @@
 import Typewriter from "typewriter-effect";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { ProfilePicturue, Waves } from "@/assets/images/images";
+import { NightStar, ProfilePicturue } from "@/assets/images/images";
 
 export const ProfileHero = () => {
   return (
     <div className="w-full relative pt-10">
       <div className="w-full h-full absolute top-0 z-0 shadow">
         <img
-          src={Waves}
-          alt="Waves"
+          src={NightStar}
+          alt="NightStar"
           className="w-full h-full object-cover object-top"
           loading="lazy"
         />
