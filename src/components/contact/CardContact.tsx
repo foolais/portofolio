@@ -23,7 +23,7 @@ const CardContact = () => {
         <CardContent>
           <Button
             variant={"outline"}
-            className="text-secondary items-center justify-center gap-3 px-4"
+            className="items-center justify-center gap-3 px-4"
           >
             <span className="text-base font-semibold">Contact Me</span>
             <Rocket color="hsl(var(--foreground))" size={20} />
