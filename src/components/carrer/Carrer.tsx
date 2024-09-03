@@ -10,10 +10,10 @@ interface DescriptionProps {
 
 const Description = ({ text, Icon }: DescriptionProps) => {
   return (
-    <div className="flex items-center gap-1.5">
+    <CardDescription className="flex items-center gap-1.5">
       <Icon size={20} color="hsl(var(--primary))" />
       <span>{text}</span>
-    </div>
+    </CardDescription>
   );
 };
 
@@ -23,18 +23,18 @@ const Carrer = () => {
       <Title text="Carrer" isBtnShow={true} />
       {jobData.map((job) => {
         return (
-          <Card key={job.company} className="my-4 w-full sm:w-5/6">
+          <Card key={job.company} className="my-4 w-full sm:w-11/12">
             <CardHeader className="flex flex-row items-center gap-6">
               <div className="p-4 md:p-6 bg-background w-max h-max rounded-xl shadow">
                 <Briefcase size={35} />
               </div>
               <div>
                 <CardTitle>{job.position}</CardTitle>
-                <CardDescription className="grid gap-2 pt-2">
+                <div className="grid gap-2 pt-2">
                   <Description text={job.company} Icon={Building2} />
                   <Description text={job.location} Icon={MapPin} />
                   <Description text={job.date} Icon={CalendarDays} />
-                </CardDescription>
+                </div>
               </div>
             </CardHeader>
           </Card>
