@@ -5,7 +5,7 @@ import {
   LinkedIn,
   WhatsApp,
 } from "@/assets/icons/icon";
-import { CodeXml, Rocket, GitBranch, Home, User } from "lucide-react";
+import { CodeXml, Rocket, Home, User } from "lucide-react";
 import {
   CSS,
   Express,
@@ -29,10 +29,6 @@ export const navbarData = [
   {
     icon: User,
     name: "Profile",
-  },
-  {
-    icon: GitBranch,
-    name: "Carrer",
   },
   {
     icon: CodeXml,
