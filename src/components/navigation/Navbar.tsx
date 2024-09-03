@@ -7,42 +7,24 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 interface Props {
   className?: string;
+  handleNavClick: (name: string) => void;
 }
 
-const Navbar = ({ className }: Props) => {
+const Navbar = ({ className, handleNavClick }: Props) => {
   const location = useLocation();
-  const navigate = useNavigate();
 
   const [currentNav, setCurrentNav] = useState<string>("");
 
   useEffect(() => {
     const currentPath = location.pathname;
     const navName = currentPath === "/" ? "Home" : currentPath.split("/")[1];
-    console.log({ navName });
     setCurrentNav(navName);
   }, []);
-
-  const handleNavClick = (name: string) => {
-    const currentPath = location.pathname;
-    const isMatchingPath =
-      name === "Home"
-        ? currentPath === "/"
-        : currentPath.includes(`/${name.toLowerCase()}`);
-
-    if (isMatchingPath) {
-      window.scrollTo({
-        top: 200,
-        behavior: "smooth",
-      });
-    } else {
-      navigate(name === "Home" ? "/" : `/${name.toLowerCase()}`);
-    }
-  };
 
   return (
     <div
