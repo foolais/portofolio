@@ -20,6 +20,13 @@ import {
   TS,
   Vue,
 } from "@/assets/icons/tech";
+import {
+  Proyek1,
+  Proyek3,
+  Proyek4,
+  Proyek5,
+  Proyek6,
+} from "@/assets/images/images";
 
 export const navbarData = [
   {
@@ -209,5 +216,139 @@ export const educationData = [
     date: "Aug 2019 - Dec 2022",
     major: "Computer Technology ",
     degree: "Associate Degree",
+  },
+];
+
+export const projectsData = [
+  {
+    title: "Anime Movie App",
+    description: "Anime Movie App",
+    technologies: [
+      {
+        name: "TypeScript",
+        image: TS,
+      },
+      {
+        name: "React.js",
+        image: React,
+      },
+      {
+        name: "Tailwind CSS",
+        image: Tailwind,
+      },
+    ],
+    github: "https://github.com/foolais/anime-movie-ts",
+    demo: "https://anime-movie-ts.vercel.app",
+    images: Proyek1,
+  },
+  {
+    title: "React Survey",
+    description: "React Survey",
+    technologies: [
+      {
+        name: "Javascript",
+        image: JS,
+      },
+      {
+        name: "React.js",
+        image: React,
+      },
+      {
+        name: "CSS",
+        image: CSS,
+      },
+    ],
+    github: "https://github.com/foolais/react-survey",
+    demo: "",
+    images: Proyek1,
+  },
+  {
+    title: "FrontEnd Foolais Store",
+    description: "FrontEnd Foolais Store",
+    technologies: [
+      {
+        name: "Javascript",
+        image: JS,
+      },
+      {
+        name: "React.js",
+        image: React,
+      },
+      {
+        name: "Tailwind CSS",
+        image: Tailwind,
+      },
+    ],
+    github: "https://github.com/foolais/foolais-store-frontend",
+    demo: "https://foolais-store.vercel.app/",
+    images: Proyek3,
+  },
+  {
+    title: "BackEnd Foolais Store",
+    description: "BackEnd Foolais Store",
+    technologies: [
+      {
+        name: "Javascript",
+        image: JS,
+      },
+      {
+        name: "Node.js",
+        image: Node,
+      },
+      {
+        name: "Express.js",
+        image: Express,
+      },
+
+      {
+        name: "MongoDB",
+        image: MongoDB,
+      },
+    ],
+    github: "https://github.com/foolais/store-api",
+    demo: "https://foolais-store-api.vercel.app/",
+    images: Proyek4,
+  },
+  {
+    title: "Ceki Game",
+    description: "Ceki Game",
+    technologies: [
+      {
+        name: "Javascript",
+        image: JS,
+      },
+      {
+        name: "React.js",
+        image: React,
+      },
+      {
+        name: "CSS",
+        image: CSS,
+      },
+    ],
+    github: "https://github.com/foolais/ceki-game",
+    demo: "https://ceki-game.vercel.app/",
+    images: Proyek5,
+  },
+  {
+    title: "Kerjakan",
+    description: "Kerjakan",
+    technologies: [
+      {
+        name: "Javascript",
+        image: JS,
+      },
+      {
+        name: "React.js",
+        image: React,
+      },
+      {
+        name: "Tailwind CSS",
+        image: Tailwind,
+      },
+    ],
+    github: "https://github.com/foolais/kerjakan",
+    demo: "https://kerjakan.netlify.app/",
+    images: Proyek6,
   },
 ];

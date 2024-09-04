@@ -1,9 +1,10 @@
+import { Project } from "@/components/project";
 import MainLayout from "../MainLayout";
 
 const Layout = () => {
   return (
-    <MainLayout>
-      <p>Proyek</p>
+    <MainLayout className="px-4 pt-8">
+      <Project />
     </MainLayout>
   );
 };
