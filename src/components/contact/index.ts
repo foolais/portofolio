@@ -1,3 +1,3 @@
-import ContactInfo from "./ContactInfo";
+import SocialMedia from "./SocialMedia";
 
-export { ContactInfo };
+export { SocialMedia };

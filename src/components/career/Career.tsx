@@ -8,7 +8,7 @@ interface CarrerProps {
 
 const Career = ({ isShowDetails }: CarrerProps) => {
   return (
-    <div className="px-6 mt-8">
+    <div className="mt-8">
       <Title text="Career" />
       {jobData.map((job) => (
         <CareerCard key={job.company} job={job} isShowDetails={isShowDetails} />

@@ -1,13 +1,15 @@
 import { Navbar } from "@/components/navigation";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { cn } from "@/lib/utils";
 import { useRef } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 interface Props {
   children: React.ReactNode;
+  className?: string;
 }
 
-const MainLayout = ({ children }: Props) => {
+const MainLayout = ({ children, className }: Props) => {
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -26,7 +28,7 @@ const MainLayout = ({ children }: Props) => {
 
   return (
     <ScrollArea>
-      <div className="w-[100vw] h-screen">
+      <div className={cn("w-[100vw] h-screen", className)}>
         <div ref={topRef} />
         <Navbar handleNavClick={handleNavClick} />
         {children}

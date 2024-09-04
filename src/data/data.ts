@@ -40,30 +40,35 @@ export const navbarData = [
   },
 ];
 
-export const contactData = [
+export const socialMediaData = [
   {
     text: "Wahyu Esya Nasution",
-    icon: LinkedIn,
+    images: LinkedIn,
+    imagesName: "LinkedIn",
     link: "https://www.linkedin.com/in/wahyuesyanasution",
   },
   {
     text: "Foolais",
-    icon: Github,
+    images: Github,
+    imagesName: "Github",
     link: "https://github.com/foolais",
   },
   {
     text: "wahyu.esya17@gmail.com",
-    icon: Gmail,
+    images: Gmail,
+    imagesName: "Gmail",
     link: "",
   },
   {
     text: "wahyu_esya",
-    icon: Instagram,
+    images: Instagram,
+    imagesName: "Instagram",
     link: "https://www.instagram.com/wahyu_esya/",
   },
   {
     text: "089524038348",
-    icon: WhatsApp,
+    images: WhatsApp,
+    imagesName: "WhatsApp",
     link: "https://wa.me/089524038348",
   },
 ];

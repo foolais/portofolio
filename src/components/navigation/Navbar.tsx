@@ -26,8 +26,9 @@ const Navbar = ({ className, handleNavClick }: Props) => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
   const handleChangeTheme = () => {
-    setIsDarkMode(!isDarkMode);
-    setTheme(isDarkMode ? "light" : "dark");
+    const newIsDarkMode = !isDarkMode;
+    setIsDarkMode(newIsDarkMode);
+    setTheme(newIsDarkMode ? "dark" : "light");
   };
 
   useEffect(() => {

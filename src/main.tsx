@@ -4,7 +4,12 @@ import "./index.css";
 import { ThemeProvider } from "./components/theme-provider";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { BackgroundBeams } from "./components/ui/background-beams";
-import { LayoutDashboard, LayoutProfile, LayoutProjects } from "./layouts";
+import {
+  LayoutContact,
+  LayoutDashboard,
+  LayoutProfile,
+  LayoutProjects,
+} from "./layouts";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "projects",
     element: <LayoutProjects />,
+  },
+  {
+    path: "contact",
+    element: <LayoutContact />,
   },
 ]);
 

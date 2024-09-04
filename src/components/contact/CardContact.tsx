@@ -8,11 +8,17 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
+import CardForm from "./CardForm";
+import { useNavigate } from "react-router-dom";
 
-const CardContact = () => {
+const CardContact: React.FC<{ isWithForm?: boolean }> = ({
+  isWithForm = true,
+}) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="w-full px-6 mt-6">
-      <Title text="Contact" isBtnShow={true} />
+    <div className="w-full">
+      <Title text="Contact" isBtnShow={!isWithForm} href="/contact" />
       <Card className="sm:w-[450px] my-4 dark:hover:bg-secondary/50 hover:cursor-default">
         <CardHeader>
           <CardTitle className="text-xl font-bold">Get In Touch</CardTitle>
@@ -21,13 +27,18 @@ const CardContact = () => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <Button
-            variant={"outline"}
-            className="items-center justify-center gap-3 px-4"
-          >
-            <span className="text-base font-semibold">Contact Me</span>
-            <Rocket color="hsl(var(--foreground))" size={20} />
-          </Button>
+          {isWithForm ? (
+            <CardForm />
+          ) : (
+            <Button
+              variant={"outline"}
+              className="items-center justify-center gap-3 px-4"
+              onClick={() => navigate("/contact")}
+            >
+              <span className="text-base font-semibold">Contact Me</span>
+              <Rocket color="hsl(var(--foreground))" size={20} />
+            </Button>
+          )}
         </CardContent>
       </Card>
     </div>

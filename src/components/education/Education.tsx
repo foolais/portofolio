@@ -4,7 +4,7 @@ import EducationCard from "./EducationCard";
 
 const Education = () => {
   return (
-    <div className="px-6 mt-8">
+    <div className="mt-8">
       <Title text="Education" />
       {educationData.map((education) => (
         <EducationCard key={education.name} education={education} />

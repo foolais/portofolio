@@ -1,6 +1,6 @@
 const ProfileDescription = () => {
   return (
-    <div className="w-11/12 md:w-5/6 font-semibold mt-4 px-4">
+    <div className="w-11/12 md:w-5/6 font-semibold mt-4">
       <p className="text-sm md:text-base 2xl:text-lg leading-5 tracking-wide">
         A dedicated{" "}
         <span className="text-primary font-bold">frontend developer </span>{" "}

@@ -6,7 +6,7 @@ import { Education } from "@/components/education";
 
 const Layout = () => {
   return (
-    <MainLayout>
+    <MainLayout className="px-4 pt-8">
       <Profile />
       <TechStack />
       <Career isShowDetails={true} />
