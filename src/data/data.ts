@@ -83,6 +83,18 @@ export const jobData = [
     ],
     technologies: [
       {
+        name: "HTML",
+        image: HTML,
+      },
+      {
+        name: "CSS",
+        image: CSS,
+      },
+      {
+        name: "JavaScript",
+        image: JS,
+      },
+      {
         name: "Vue.js",
         image: Vue,
       },
@@ -103,6 +115,18 @@ export const jobData = [
       "Implementing consume REST API for communication with backend.",
     ],
     technologies: [
+      {
+        name: "HTML",
+        image: HTML,
+      },
+      {
+        name: "CSS",
+        image: CSS,
+      },
+      {
+        name: "JavaScript",
+        image: JS,
+      },
       {
         name: "React.js",
         image: React,
