@@ -25,7 +25,7 @@ interface ProjectProps {
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
   return (
-    <Card className="w-11/12 cursor-default">
+    <Card className="w-full cursor-default">
       <ProjectCardHeader
         images={project.images}
         description={project.description}
