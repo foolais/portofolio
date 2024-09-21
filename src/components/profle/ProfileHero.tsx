@@ -1,7 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { NightStar, ProfilePicturue } from "@/assets/images/images";
+import { BlueSky, NightStar, ProfilePicturue } from "@/assets/images/images";
 import { cn } from "@/lib/utils";
 import ProfileName from "./ProfileName";
+import { useTheme } from "../theme-provider";
 
 const ProfileAvatar = () => {
   return (
@@ -15,11 +16,13 @@ const ProfileAvatar = () => {
 const ProfileHero: React.FC<{ isFullName?: boolean }> = ({
   isFullName = false,
 }) => {
+  const { theme } = useTheme();
+
   return (
     <div className="w-full relative pt-10">
       <div className="w-full h-full absolute top-0 z-0 shadow">
         <img
-          src={NightStar}
+          src={theme === "dark" ? NightStar : BlueSky}
           alt="NightStar"
           className="w-full h-full object-cover object-top"
           loading="lazy"

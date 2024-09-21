@@ -1,6 +1,7 @@
 import ProfilePicturue from "./profilePicture.png";
 import Waves from "./waves.jpg";
 import NightStar from "./night-star.jpg";
+import BlueSky from "./blue-sky.jpg";
 import Proyek1 from "./proyek-1.jpg";
 import Proyek2 from "./proyek-2.jpg";
 import Proyek3 from "./proyek-3.jpg";
@@ -12,6 +13,7 @@ export {
   ProfilePicturue,
   Waves,
   NightStar,
+  BlueSky,
   Proyek1,
   Proyek2,
   Proyek3,
