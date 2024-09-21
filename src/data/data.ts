@@ -62,10 +62,10 @@ export const socialMediaData = [
     link: "https://github.com/foolais",
   },
   {
-    text: "wahyu.esya17@gmail.com",
-    images: Gmail,
-    imagesName: "Gmail",
-    link: "",
+    text: "089524038348",
+    images: WhatsApp,
+    imagesName: "WhatsApp",
+    link: "https://wa.me/089524038348",
   },
   {
     text: "wahyu_esya",
@@ -74,10 +74,10 @@ export const socialMediaData = [
     link: "https://www.instagram.com/wahyu_esya/",
   },
   {
-    text: "089524038348",
-    images: WhatsApp,
-    imagesName: "WhatsApp",
-    link: "https://wa.me/089524038348",
+    text: "wahyu.esya17@gmail.com",
+    images: Gmail,
+    imagesName: "Gmail",
+    link: "",
   },
 ];
 
