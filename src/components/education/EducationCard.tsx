@@ -1,16 +1,18 @@
 import { CalendarDays, Globe, Landmark, MapPin, School } from "lucide-react";
 import { Card, CardHeaderComponent } from "../ui/card";
 import { EducationProps } from "@/types/types";
+import { cn } from "@/lib/utils";
 
 interface EducationCardProps {
   education: EducationProps;
+  className?: string;
 }
 
-const EducationCard = ({ education }: EducationCardProps) => {
+const EducationCard = ({ education, className }: EducationCardProps) => {
   const { name, location, date, major, degree } = education;
 
   return (
-    <Card className="my-4 w-full sm:w-11/12">
+    <Card className={cn("my-4 w-full sm:w-3/4 cursor-default", className)}>
       <CardHeaderComponent
         title={name}
         description={[

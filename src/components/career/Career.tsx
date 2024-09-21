@@ -11,13 +11,22 @@ const Career = () => {
   return (
     <div className="mt-8">
       <Title text="Career" />
-      <div className={isProfilePage ? "" : "sm:flex sm:gap-3"}>
-        {jobData.map((job) => (
+      <div
+        className={
+          isProfilePage ? "flex flex-col" : "flex sm:flex-row sm:gap-3"
+        }
+      >
+        {jobData.map((job, index) => (
           <CareerCard
             key={job.company}
             job={job}
             isShowDetails={isProfilePage}
             isWithIcons={isProfilePage}
+            className={
+              isProfilePage && index % 2 === 0
+                ? "place-self-start"
+                : "place-self-end"
+            }
           />
         ))}
       </div>

@@ -3,20 +3,23 @@ import { Card, CardContent, CardHeaderComponent } from "../ui/card";
 import CareerDetails from "./CareerDetails";
 import { TechIcon } from "../techStack";
 import { JobProps } from "@/types/types";
+import { cn } from "@/lib/utils";
 
 interface CareerCardProps {
   job: JobProps;
   isShowDetails?: boolean;
   isWithIcons?: boolean;
+  className?: string;
 }
 
 const CareerCard: React.FC<CareerCardProps> = ({
   job,
   isShowDetails = false,
   isWithIcons,
+  className,
 }) => {
   return (
-    <Card className="my-4 w-full sm:w-11/12">
+    <Card className={cn("my-4 w-full sm:w-3/4 cursor-default", className)}>
       <CardHeaderComponent
         title={job.position}
         description={[

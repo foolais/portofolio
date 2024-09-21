@@ -6,9 +6,15 @@ const Education = () => {
   return (
     <div className="mt-8">
       <Title text="Education" />
-      {educationData.map((education) => (
-        <EducationCard key={education.name} education={education} />
-      ))}
+      <div className="flex flex-col">
+        {educationData.map((education, index) => (
+          <EducationCard
+            key={education.name}
+            education={education}
+            className={index % 2 === 0 ? "place-self-start" : "place-self-end"}
+          />
+        ))}
+      </div>
     </div>
   );
 };
