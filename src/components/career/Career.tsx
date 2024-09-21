@@ -13,7 +13,9 @@ const Career = () => {
       <Title text="Career" />
       <div
         className={
-          isProfilePage ? "flex flex-col" : "flex flex-col sm:flex-row sm:gap-3"
+          isProfilePage
+            ? "flex flex-col"
+            : "flex flex-col sm:flex-row md:flex-col sm:gap-3"
         }
       >
         {jobData.map((job, index) => (

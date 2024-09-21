@@ -27,14 +27,19 @@ const MainLayout = ({ children, className }: Props) => {
   };
 
   return (
-    <ScrollArea>
-      <div className={cn("w-[100vw] h-screen", className)}>
-        <div ref={topRef} />
-        <Navbar handleNavClick={handleNavClick} />
-        {children}
-        <div className="p-12" />
+    <div className="md:flex md:flex-row md:justify-between md:p-6 max-h-screen">
+      <div>
+        <p>tes</p>
       </div>
-    </ScrollArea>
+      <ScrollArea className="md:w-[575px] md:max-h-[95vh] md:rounded-lg md:border-2 md:border-secondary">
+        <div className={cn("w-full h-screen", className)}>
+          <div ref={topRef} />
+          <Navbar handleNavClick={handleNavClick} />
+          {children}
+          <div className="p-12 md:p-4" />
+        </div>
+      </ScrollArea>
+    </div>
   );
 };
 

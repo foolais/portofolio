@@ -67,7 +67,7 @@ const CardHeaderComponent = React.forwardRef<
       <div
         className={cn(
           "p-4 md:p-6 bg-background w-max h-max rounded-xl shadow",
-          isWithIcons ? "block" : "sm:hidden"
+          isWithIcons ? "block" : "sm:hidden md:block"
         )}
       >
         {icon}

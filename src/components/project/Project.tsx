@@ -25,7 +25,7 @@ interface ProjectProps {
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
   return (
-    <Card className="w-full cursor-default">
+    <Card className="w-full cursor-default flex flex-col justify-between">
       <ProjectCardHeader
         images={project.images}
         description={project.description}
@@ -33,12 +33,9 @@ const ProjectCard = ({ project }: { project: ProjectProps }) => {
       <ProjectCardContent
         title={project.title}
         description={project.description}
-      />
-      <ProjectCardFooter
         technologies={project.technologies}
-        github={project.github}
-        demo={project.demo}
       />
+      <ProjectCardFooter github={project.github} demo={project.demo} />
     </Card>
   );
 };
@@ -56,7 +53,7 @@ const ProjectCardHeader = ({
         src={images}
         alt={description}
         loading="lazy"
-        className="rounded-xl object-cover object-center max-h-[400px]"
+        className="rounded-xl object-cover object-center min-h-[150px] min-w-[150px]"
       />
     </CardHeader>
   );
@@ -65,34 +62,34 @@ const ProjectCardHeader = ({
 const ProjectCardContent = ({
   title,
   description,
+  technologies,
 }: {
   title: string;
   description: string;
+  technologies: TechProps[];
 }) => {
   return (
     <CardContent className="py-0">
       <CardTitle className="text-xl">{title}</CardTitle>
       <CardDescription>{description}</CardDescription>
-    </CardContent>
-  );
-};
-
-const ProjectCardFooter = ({
-  technologies,
-  github,
-  demo,
-}: {
-  technologies: TechProps[];
-  github: string;
-  demo: string;
-}) => {
-  return (
-    <CardFooter className="w-full flex items-center justify-between pt-4">
       <div className="flex flex-wrap items-center gap-3 mt-2">
         {technologies.map((tech, index) => (
           <TechIcon key={index} {...tech} />
         ))}
       </div>
+    </CardContent>
+  );
+};
+
+const ProjectCardFooter = ({
+  github,
+  demo,
+}: {
+  github: string;
+  demo: string;
+}) => {
+  return (
+    <CardFooter className="w-full flex justify-end pt-4">
       <div className="flex items-center justify-center gap-3">
         <Link to={github} target="_blank" rel="noopener noreferrer">
           <Button
@@ -123,7 +120,7 @@ const Project = () => {
   return (
     <div>
       <Title text="Projects" />
-      <div className="grid grid-cols-1 gap-6 mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
         {projectsData.map((project, index) => (
           <ProjectCard key={index} project={project} />
         ))}

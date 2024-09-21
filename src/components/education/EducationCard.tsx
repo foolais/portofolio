@@ -12,7 +12,9 @@ const EducationCard = ({ education, className }: EducationCardProps) => {
   const { name, location, date, major, degree } = education;
 
   return (
-    <Card className={cn("my-4 w-full sm:w-3/4 cursor-default", className)}>
+    <Card
+      className={cn("my-4 w-full sm:w-3/4 md:w-full cursor-default", className)}
+    >
       <CardHeaderComponent
         title={name}
         description={[

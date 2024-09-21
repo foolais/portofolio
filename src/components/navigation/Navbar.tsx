@@ -45,7 +45,11 @@ const Navbar = ({ className, handleNavClick }: Props) => {
 
   return (
     <div
-      className={cn(className, "fixed bottom-0 left-0 right-0 md:static z-30")}
+      className={cn(
+        className,
+        "fixed bottom-0 left-0 right-0 md:static z-30",
+        "md:hidden"
+      )}
     >
       <div className="w-max mx-auto md:mx-0 md:w-full">
         <div

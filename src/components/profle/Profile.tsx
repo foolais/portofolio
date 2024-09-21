@@ -4,16 +4,32 @@ import ProfileHero from "./ProfileHero";
 import ProfileDescription from "./ProfileDescription";
 import ProfileName from "./ProfileName";
 import { Separator } from "../ui/separator";
+import { useCallback, useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
 
 const Profile: React.FC<{ isWithHero?: boolean }> = ({
   isWithHero = false,
 }) => {
+  const [breakpointWidth, setBreakpointWidth] = useState(window.innerWidth);
+
+  const handleResize = useCallback(() => {
+    setBreakpointWidth(window.innerWidth);
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
+
   return (
     <div className="max-h-screen">
-      {isWithHero ? (
+      {isWithHero && breakpointWidth < 768 ? (
         <ProfileHero />
       ) : (
-        <div className="w-11/12">
+        <div className={cn("w-11/12", isWithHero && "px-4 pt-8")}>
           <ProfileName isFullName={true} />
           <Separator />
         </div>

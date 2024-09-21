@@ -19,7 +19,7 @@ const CardContact: React.FC<{ isWithForm?: boolean }> = ({
   return (
     <div className="w-full">
       <Title text="Contact" isBtnShow={!isWithForm} href="/contact" />
-      <Card className="sm:w-3/4 my-4 dark:hover:bg-secondary/50 hover:cursor-default">
+      <Card className="sm:w-3/4 md:w-full my-4 dark:hover:bg-secondary/50 hover:cursor-default">
         <CardHeader>
           <CardTitle className="text-xl font-bold flex items-center gap-2">
             <span>Get In Touch</span>
