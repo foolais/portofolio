@@ -20,10 +20,10 @@ interface Props {
 
 const Navbar = ({ className, handleNavClick }: Props) => {
   const location = useLocation();
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   const [currentNav, setCurrentNav] = useState<string>("");
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
   const handleChangeTheme = () => {
     const newIsDarkMode = !isDarkMode;
@@ -35,6 +35,11 @@ const Navbar = ({ className, handleNavClick }: Props) => {
     const currentPath = location.pathname;
     const navName = currentPath === "/" ? "Home" : currentPath.split("/")[1];
     setCurrentNav(navName.toLocaleLowerCase());
+  }, []);
+
+  useEffect(() => {
+    const newIsDarkMode = theme === "dark";
+    setIsDarkMode(newIsDarkMode);
   }, []);
 
   const btnIconClassName = cn(
@@ -88,9 +93,9 @@ const Navbar = ({ className, handleNavClick }: Props) => {
             onClick={handleChangeTheme}
           >
             {isDarkMode ? (
-              <Moon className="icon-size" />
-            ) : (
               <Sun className="icon-size" />
+            ) : (
+              <Moon className="icon-size" />
             )}
           </Button>
         </div>

@@ -1,17 +1,8 @@
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { BlueSky, NightStar, ProfilePicturue } from "@/assets/images/images";
+import { BlueSky, NightStar } from "@/assets/images/images";
 import { cn } from "@/lib/utils";
 import ProfileName from "./ProfileName";
 import { useTheme } from "../theme-provider";
-
-const ProfileAvatar = () => {
-  return (
-    <Avatar className="border-b-4 border-primary sm:w-40 sm:h-40">
-      <AvatarImage src={ProfilePicturue} alt="WSYN" />
-      <AvatarFallback>WSYN</AvatarFallback>
-    </Avatar>
-  );
-};
+import ProfileAvatar from "./ProfileAvatar";
 
 const ProfileHero: React.FC<{ isFullName?: boolean }> = ({
   isFullName = false,

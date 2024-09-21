@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
 import Sidenav from "./Sidenav";
+import NavTheme from "./NavTheme";
 
-export { Navbar, Sidenav };
+export { Navbar, Sidenav, NavTheme };

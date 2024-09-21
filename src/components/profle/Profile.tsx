@@ -7,9 +7,12 @@ import { Separator } from "../ui/separator";
 import { useCallback, useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 
-const Profile: React.FC<{ isWithHero?: boolean }> = ({
-  isWithHero = false,
-}) => {
+interface ProfileProps {
+  isWithHero?: boolean;
+  isSidebar?: boolean;
+}
+
+const Profile: React.FC<ProfileProps> = ({ isWithHero = false }) => {
   const [breakpointWidth, setBreakpointWidth] = useState(window.innerWidth);
 
   const handleResize = useCallback(() => {
