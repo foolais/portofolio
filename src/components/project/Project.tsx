@@ -25,7 +25,7 @@ interface ProjectProps {
 
 const ProjectCard = ({ project }: { project: ProjectProps }) => {
   return (
-    <Card className="w-11/12">
+    <Card className="w-11/12 cursor-default">
       <ProjectCardHeader
         images={project.images}
         description={project.description}
@@ -87,16 +87,11 @@ const ProjectCardFooter = ({
   demo: string;
 }) => {
   return (
-    <CardFooter className="w-full flex items-end justify-between pt-0">
-      <div>
-        <CardDescription className="dark:text-primary-foreground font-semibold mt-3">
-          Technologies
-        </CardDescription>
-        <div className="flex flex-wrap items-center gap-3 mt-2">
-          {technologies.map((tech, index) => (
-            <TechIcon key={index} {...tech} />
-          ))}
-        </div>
+    <CardFooter className="w-full flex items-center justify-between pt-4">
+      <div className="flex flex-wrap items-center gap-3 mt-2">
+        {technologies.map((tech, index) => (
+          <TechIcon key={index} {...tech} />
+        ))}
       </div>
       <div className="flex items-center justify-center gap-3">
         <Link to={github} target="_blank" rel="noopener noreferrer">

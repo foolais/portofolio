@@ -4,30 +4,32 @@ import { Card, CardHeader, CardTitle } from "../ui/card";
 import { TechIcon } from "../techStack";
 import { Button } from "../ui/button";
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const SocialMedia = () => {
   return (
     <div className="w-full mb-6">
       <Title text="Social Media" />
-      <div className="flex flex-wrap gap-3 my-4">
+      <div className="flex flex-wrap my-4 gap-3">
         {socialMediaData.map((data) => {
           return (
-            <Card key={data.text}>
-              <CardHeader className="py-1 px-2 flex-row items-center gap-3 space-y-0 rounded-lg">
-                <TechIcon name={data.imagesName} image={data.images} />
-                <CardTitle className="font-normal tracking-wider">
-                  {data.text}
-                </CardTitle>
-                <a href={data.link} target="_blank">
+            <Link key={data.text} to={data.link} target="_blank">
+              <Card className="w-max">
+                <CardHeader className="py-1 px-2 flex-row items-center gap-2 space-y-0 rounded-lg">
+                  <TechIcon name={data.imagesName} image={data.images} />
+                  <CardTitle className="font-normal tracking-wider">
+                    {data.text}
+                  </CardTitle>
                   <Button
                     variant="ghost"
-                    className="w-full flex items-center justify-start gap-4 px-1.5"
+                    className="flex items-center justify-start p-1"
+                    disabled
                   >
                     <ArrowUpRight size={20} />
                   </Button>
-                </a>
-              </CardHeader>
-            </Card>
+                </CardHeader>
+              </Card>
+            </Link>
           );
         })}
       </div>

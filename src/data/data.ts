@@ -22,6 +22,7 @@ import {
 } from "@/assets/icons/tech";
 import {
   Proyek1,
+  Proyek2,
   Proyek3,
   Proyek4,
   Proyek5,
@@ -259,8 +260,8 @@ export const projectsData = [
       },
     ],
     github: "https://github.com/foolais/react-survey",
-    demo: "",
-    images: Proyek1,
+    demo: "https://react-survey-app-eight.vercel.app/",
+    images: Proyek2,
   },
   {
     title: "FrontEnd Foolais Store",
