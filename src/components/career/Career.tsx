@@ -1,18 +1,26 @@
+import { useLocation } from "react-router-dom";
 import { Title } from "../title";
 import CareerCard from "./CareerCard";
 import { jobData } from "@/data/data";
+import { useMemo } from "react";
 
-interface CarrerProps {
-  isShowDetails?: boolean;
-}
+const Career = () => {
+  const { pathname } = useLocation();
+  const isProfilePage = useMemo(() => pathname === "/profile", [pathname]);
 
-const Career = ({ isShowDetails }: CarrerProps) => {
   return (
     <div className="mt-8">
       <Title text="Career" />
-      {jobData.map((job) => (
-        <CareerCard key={job.company} job={job} isShowDetails={isShowDetails} />
-      ))}
+      <div className={isProfilePage ? "" : "sm:flex sm:gap-3"}>
+        {jobData.map((job) => (
+          <CareerCard
+            key={job.company}
+            job={job}
+            isShowDetails={isProfilePage}
+            isWithIcons={isProfilePage}
+          />
+        ))}
+      </div>
     </div>
   );
 };

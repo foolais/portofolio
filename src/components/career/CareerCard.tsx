@@ -7,11 +7,13 @@ import { JobProps } from "@/types/types";
 interface CareerCardProps {
   job: JobProps;
   isShowDetails?: boolean;
+  isWithIcons?: boolean;
 }
 
 const CareerCard: React.FC<CareerCardProps> = ({
   job,
   isShowDetails = false,
+  isWithIcons,
 }) => {
   return (
     <Card className="my-4 w-full sm:w-11/12">
@@ -24,6 +26,7 @@ const CareerCard: React.FC<CareerCardProps> = ({
         ]}
         icon={<Briefcase size={35} />}
         isShowDetails={isShowDetails}
+        isWithIcons={isWithIcons}
       />
       {isShowDetails && job.description && job.technologies && (
         <CardContent>

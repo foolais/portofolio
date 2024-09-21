@@ -9,7 +9,7 @@ const Layout = () => {
     <MainLayout className="px-4 pt-8">
       <Profile />
       <TechStack />
-      <Career isShowDetails={true} />
+      <Career />
       <Education />
     </MainLayout>
   );

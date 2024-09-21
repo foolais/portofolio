@@ -9,6 +9,7 @@ interface CardHeaderComponentProps
   description: DescriptionProps[];
   icon: React.ReactNode;
   isShowDetails?: boolean;
+  isWithIcons?: boolean;
 }
 
 const Card = React.forwardRef<
@@ -43,7 +44,15 @@ const CardHeaderComponent = React.forwardRef<
   CardHeaderComponentProps
 >(
   (
-    { title, description, icon, isShowDetails = false, className, ...props },
+    {
+      title,
+      description,
+      icon,
+      isWithIcons = true,
+      isShowDetails = false,
+      className,
+      ...props
+    },
     ref
   ) => (
     <div
@@ -55,7 +64,12 @@ const CardHeaderComponent = React.forwardRef<
       )}
       {...props}
     >
-      <div className="p-4 md:p-6 bg-background w-max h-max rounded-xl shadow">
+      <div
+        className={cn(
+          "p-4 md:p-6 bg-background w-max h-max rounded-xl shadow",
+          isWithIcons ? "block" : "sm:hidden"
+        )}
+      >
         {icon}
       </div>
       <div>
