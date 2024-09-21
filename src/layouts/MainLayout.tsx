@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/navigation";
+import { Navbar, Sidenav } from "@/components/navigation";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import { useRef } from "react";
@@ -10,14 +10,14 @@ interface Props {
 }
 
 const MainLayout = ({ children, className }: Props) => {
-  const location = useLocation();
+  const { pathname } = useLocation();
   const navigate = useNavigate();
 
   const topRef = useRef<HTMLDivElement>(null);
 
   const handleNavClick = (name: string) => {
     const navigatePath = name === "Home" ? "/" : `/${name.toLowerCase()}`;
-    const isMatchingPath = location.pathname.endsWith(navigatePath);
+    const isMatchingPath = pathname.endsWith(navigatePath);
 
     if (isMatchingPath) {
       topRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -27,12 +27,10 @@ const MainLayout = ({ children, className }: Props) => {
   };
 
   return (
-    <div className="md:flex md:flex-row md:justify-between md:p-6 max-h-screen">
-      <div>
-        <p>tes</p>
-      </div>
+    <div className="md:flex md:flex-row md:justify-between md:p-6 max-h-screen md:gap-4">
+      <Sidenav handleNavClick={handleNavClick} />
       <ScrollArea className="md:w-[575px] md:max-h-[95vh] md:rounded-lg md:border-2 md:border-secondary">
-        <div className={cn("w-full h-screen", className)}>
+        <div className={cn("w-full h-full", className)}>
           <div ref={topRef} />
           <Navbar handleNavClick={handleNavClick} />
           {children}
