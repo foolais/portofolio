@@ -1,13 +1,17 @@
 import { BlueSky, NightStar } from "@/assets/images/images";
 import { cn } from "@/lib/utils";
-import ProfileName from "./ProfileName";
 import { useTheme } from "../theme-provider";
-import ProfileAvatar from "./ProfileAvatar";
+import { lazy } from "react";
+
+const ProfileAvatar = lazy(() => import("./ProfileAvatar"));
+const ProfileName = lazy(() => import("./ProfileName"));
 
 const ProfileHero: React.FC<{ isFullName?: boolean }> = ({
   isFullName = false,
 }) => {
   const { theme } = useTheme();
+
+  console.log("ProfileHero component rendered");
 
   return (
     <div className="w-full relative pt-10">
@@ -21,7 +25,7 @@ const ProfileHero: React.FC<{ isFullName?: boolean }> = ({
         <div className="w-full h-[105%] absolute top-0 z-10 gradient"></div>
       </div>
       <div className={cn("px-4 items-end flex gap-4 z-20")}>
-        <ProfileAvatar />
+        <ProfileAvatar key="profile-avatar" />
         <ProfileName isFullName={isFullName} />
       </div>
     </div>

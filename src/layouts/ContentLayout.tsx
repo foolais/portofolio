@@ -1,14 +1,20 @@
 import { useTheme } from "@/components/theme-provider";
-import { BackgroundBeams } from "@/components/ui/background-beams";
+import { lazy, Suspense } from "react";
+
+const BackgroundBeams = lazy(() => import("@/components/ui/background-beams"));
 
 const ContentLayout = ({ children }: { children: React.ReactNode }) => {
   const { theme } = useTheme();
 
   return (
-    <>
+    <div className="lg:max-w-[80%] xl:max-w-[65%] mx-auto relative">
       {children}
-      {theme === "dark" && <BackgroundBeams className="-z-10" />}
-    </>
+      {theme === "dark" && (
+        <Suspense>
+          <BackgroundBeams className="-z-10" />
+        </Suspense>
+      )}
+    </div>
   );
 };
 

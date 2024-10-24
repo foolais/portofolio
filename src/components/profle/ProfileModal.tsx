@@ -1,5 +1,5 @@
 import { Doodles1, Doodles2 } from "@/assets/doodles/doodles";
-import { ProfilePicturue } from "@/assets/images/images";
+import { ProfilePicture } from "@/assets/images/images";
 import { cn } from "@/lib/utils";
 
 const ProfileModal = () => {
@@ -29,8 +29,8 @@ const ProfileModal = () => {
         />
         <div className="absolute bottom-0 left-2 w-full min-h-[125%] overflow-clip">
           <img
-            src={ProfilePicturue}
-            alt="ProfilePicturue"
+            src={ProfilePicture}
+            alt="ProfilePicture"
             className="absolute z-20 object-cover h-max bottom-0 right-5 scale-105 -rotate-6"
             loading="lazy"
           />

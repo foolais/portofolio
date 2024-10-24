@@ -18,7 +18,7 @@ const Sidenav = ({ handleNavClick }: Props) => {
     const currentPath = pathname;
     const navName = currentPath === "/" ? "Home" : currentPath.split("/")[1];
     setCurrentNav(navName.toLocaleLowerCase());
-  }, []);
+  }, [pathname]);
 
   return (
     <div className="flex-col w-[200px] gap-1 hidden md:flex">
@@ -35,14 +35,14 @@ const Sidenav = ({ handleNavClick }: Props) => {
         >
           <div className="flex items-center gap-3">
             <Icon
-              size={20}
+              size={18}
               color={
                 currentNav === name.toLocaleLowerCase()
                   ? "hsl(var(--background))"
                   : "hsl(var(--primary))"
               }
             />
-            <span className="font-semibold">{name}</span>
+            <span className="font-semibold text-sm">{name}</span>
           </div>
           <Button
             variant="ghost"

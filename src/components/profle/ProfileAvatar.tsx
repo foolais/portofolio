@@ -1,13 +1,17 @@
-import { ProfilePicturue } from "@/assets/images/images";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import ProfilePicture from "../../assets/images/profilePicture.png";
+import { Avatar, AvatarImage } from "../ui/avatar";
+import { memo } from "react";
+import { KeepAlive } from "keepalive-for-react";
 
-const ProfileAvatar = () => {
+const ProfileAvatar = memo(() => {
+  console.log("tes");
   return (
     <Avatar className="border-b-4 border-primary sm:w-40 sm:h-40 md:w-32 md:h-32">
-      <AvatarImage src={ProfilePicturue} alt="WSYN" />
-      <AvatarFallback>WSYN</AvatarFallback>
+      <KeepAlive activeCacheKey="profile-avatar-cache">
+        <AvatarImage src={ProfilePicture} alt="WSYN" />
+      </KeepAlive>
     </Avatar>
   );
-};
+});
 
 export default ProfileAvatar;
