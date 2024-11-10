@@ -1,13 +1,13 @@
-import LayoutDashboard from "./dashboard/Layout";
-import LayoutProfile from "./profile/Layout";
-import LayoutProjects from "./projects/Layout";
-import LayoutContact from "./contact/Layout";
+import HomeLayout from "./HomeLayout";
+import ProfileLayout from "./ProfileLayout";
+import ProjectLayout from "./ProjectLayout";
+import ContactLayout from "./ContactLayout";
 import ContentLayout from "./ContentLayout";
 
 export {
-  LayoutDashboard,
-  LayoutProfile,
-  LayoutProjects,
-  LayoutContact,
+  HomeLayout,
+  ProfileLayout,
+  ProjectLayout,
+  ContactLayout,
   ContentLayout,
 };

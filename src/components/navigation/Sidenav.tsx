@@ -1,25 +1,14 @@
 import { navbarData } from "@/data/data";
 import { cn } from "@/lib/utils";
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 
 interface Props {
   handleNavClick: (name: string) => void;
+  currentNav: string;
 }
 
-const Sidenav = ({ handleNavClick }: Props) => {
-  const { pathname } = useLocation();
-
-  const [currentNav, setCurrentNav] = useState<string>("");
-
-  useEffect(() => {
-    const currentPath = pathname;
-    const navName = currentPath === "/" ? "Home" : currentPath.split("/")[1];
-    setCurrentNav(navName.toLocaleLowerCase());
-  }, [pathname]);
-
+const Sidenav = ({ handleNavClick, currentNav }: Props) => {
   return (
     <div className="flex-col w-[200px] gap-1 hidden md:flex">
       {navbarData.map(({ icon: Icon, name }, index) => (

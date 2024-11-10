@@ -11,8 +11,6 @@ const ProfileHero: React.FC<{ isFullName?: boolean }> = ({
 }) => {
   const { theme } = useTheme();
 
-  console.log("ProfileHero component rendered");
-
   return (
     <div className="w-full relative pt-10">
       <div className="w-full h-full absolute top-0 z-0 shadow">

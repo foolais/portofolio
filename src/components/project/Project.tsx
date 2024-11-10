@@ -10,7 +10,6 @@ import {
 } from "../ui/card";
 import { TechIcon } from "../techStack";
 import { Button } from "../ui/button";
-import { Link } from "react-router-dom";
 import { ArrowUpRight, Github } from "lucide-react";
 import { TechProps } from "@/types/types";
 
@@ -91,7 +90,7 @@ const ProjectCardFooter = ({
   return (
     <CardFooter className="w-full flex justify-end pt-4">
       <div className="flex items-center justify-center gap-3">
-        <Link to={github} target="_blank" rel="noopener noreferrer">
+        <a href={github} target="_blank" rel="noopener noreferrer">
           <Button
             size={"sm"}
             variant={"accent"}
@@ -100,8 +99,8 @@ const ProjectCardFooter = ({
             <Github size={15} />
             <p>Github</p>
           </Button>
-        </Link>
-        <Link to={demo} target="_blank" rel="noopener noreferrer">
+        </a>
+        <a href={demo} target="_blank" rel="noopener noreferrer">
           <Button
             size={"sm"}
             variant={"outline"}
@@ -110,7 +109,7 @@ const ProjectCardFooter = ({
             <p>Demo</p>
             <ArrowUpRight size={15} />
           </Button>
-        </Link>
+        </a>
       </div>
     </CardFooter>
   );

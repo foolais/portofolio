@@ -9,12 +9,12 @@ import {
   CardTitle,
 } from "../ui/card";
 import CardForm from "./CardForm";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
 const CardContact: React.FC<{ isWithForm?: boolean }> = ({
   isWithForm = true,
 }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div className="w-full">
@@ -36,7 +36,7 @@ const CardContact: React.FC<{ isWithForm?: boolean }> = ({
             <Button
               variant={"outline"}
               className="items-center justify-center gap-3 px-4"
-              onClick={() => navigate("/contact")}
+              // onClick={() => navigate("/contact")}
             >
               <span className="text-base font-semibold">Contact Me</span>
               <Rocket color="hsl(var(--foreground))" size={20} />

@@ -7,7 +7,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "../ui/tooltip";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Separator } from "../ui/separator";
 import { Moon, Sun } from "lucide-react";
@@ -19,7 +19,7 @@ interface Props {
 }
 
 const Navbar = ({ className, handleNavClick }: Props) => {
-  const location = useLocation();
+  // const location = useLocation();
   const { theme, setTheme } = useTheme();
 
   const [currentNav, setCurrentNav] = useState<string>("");
@@ -32,8 +32,7 @@ const Navbar = ({ className, handleNavClick }: Props) => {
   };
 
   useEffect(() => {
-    const currentPath = location.pathname;
-    const navName = currentPath === "/" ? "Home" : currentPath.split("/")[1];
+    const navName = "home";
     setCurrentNav(navName.toLocaleLowerCase());
   }, []);
 

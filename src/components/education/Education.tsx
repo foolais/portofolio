@@ -6,7 +6,7 @@ const Education = () => {
   return (
     <div className="mt-8">
       <Title text="Education" />
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-4 mt-4">
         {educationData.map((education, index) => (
           <EducationCard
             key={education.name}

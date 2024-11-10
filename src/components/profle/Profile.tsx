@@ -2,7 +2,6 @@ import { Button } from "../ui/button";
 import { Download } from "lucide-react";
 import { Separator } from "../ui/separator";
 import { lazy, Suspense } from "react";
-import { cn } from "@/lib/utils";
 import { useMediaQuery } from "react-responsive";
 
 const ProfileHero = lazy(() => import("./ProfileHero"));
@@ -17,20 +16,18 @@ interface ProfileProps {
 const Profile: React.FC<ProfileProps> = ({ isWithHero = false }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
-  console.log(`isWith hero rerender ${isWithHero}`);
-
   return (
     <div className="max-h-screen">
       <Suspense>
         {isWithHero && isMobile ? (
           <ProfileHero />
         ) : (
-          <div className={cn("w-11/12", isWithHero && "px-4 pt-8")}>
+          <div className="w-11/12">
             <ProfileName isFullName={true} />
             <Separator />
           </div>
         )}
-        <div className={isWithHero ? "px-4" : ""}>
+        <div>
           <ProfileDescription />
           <div className="mt-4">
             <Button className="flex items-center justify-center text-secondary gap-2 px-4">

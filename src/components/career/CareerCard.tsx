@@ -19,9 +19,7 @@ const CareerCard: React.FC<CareerCardProps> = ({
   className,
 }) => {
   return (
-    <Card
-      className={cn("my-4 w-full sm:w-3/4 md:w-full cursor-default", className)}
-    >
+    <Card className={cn("w-full sm:w-3/4 md:w-full cursor-default", className)}>
       <CardHeaderComponent
         title={job.position}
         description={[

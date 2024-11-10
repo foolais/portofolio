@@ -3,42 +3,42 @@ import ProfileAvatar from "@/components/profle/ProfileAvatar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import { Separator } from "@radix-ui/react-separator";
-import { memo, useCallback, useMemo, useRef } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { memo, useCallback, useMemo, useRef, useState } from "react";
+import {
+  HomeLayout,
+  ProfileLayout,
+  ProjectLayout,
+  ContactLayout,
+} from "./index";
 
 interface Props {
-  children: React.ReactNode;
   className?: string;
 }
 
-const MainLayout = memo(({ children, className }: Props) => {
-  const { pathname } = useLocation();
-  console.log("MainLayout component rendered");
-
-  const navigate = useNavigate();
+const MainLayout = memo(({ className }: Props) => {
+  const [currentNav, setCurrentNav] = useState("home");
 
   const topRef = useRef<HTMLDivElement>(null);
 
   const handleNavClick = useCallback(
     (name: string) => {
-      const navigatePath = name === "Home" ? "/" : `/${name.toLowerCase()}`;
-      const isMatchingPath = pathname.endsWith(navigatePath);
+      const navigatePath = name.toLocaleLowerCase();
 
-      if (isMatchingPath) {
+      if (navigatePath === currentNav) {
         topRef.current?.scrollIntoView({ behavior: "smooth" });
       } else {
-        navigate(navigatePath);
+        setCurrentNav(navigatePath);
+        localStorage.setItem("currentNav", navigatePath);
       }
     },
-    [navigate, pathname]
+    [currentNav]
   );
 
-  const memoizedChildren = useMemo(() => children, [children]);
   const memoizedSidenav = useMemo(
-    () => <Sidenav handleNavClick={handleNavClick} />,
-    [handleNavClick]
+    () => <Sidenav handleNavClick={handleNavClick} currentNav={currentNav} />,
+    [handleNavClick, currentNav]
   );
-  const memoizedProfileAvatar = useMemo(() => <ProfileAvatar />, [pathname]);
+  const memoizedProfileAvatar = useMemo(() => <ProfileAvatar />, []);
   const memoizedNavTheme = useMemo(() => <NavTheme />, []);
 
   return (
@@ -54,8 +54,19 @@ const MainLayout = memo(({ children, className }: Props) => {
         <div className={cn("w-full h-full", className)}>
           <div ref={topRef} />
           <Navbar handleNavClick={handleNavClick} />
-          {memoizedChildren}
-          <div className="p-12 md:p-4" />
+          <div className="p-6">
+            {currentNav === "home" ? (
+              <HomeLayout />
+            ) : currentNav === "profile" ? (
+              <ProfileLayout />
+            ) : currentNav === "projects" ? (
+              <ProjectLayout />
+            ) : currentNav === "contact" ? (
+              <ContactLayout />
+            ) : (
+              <></>
+            )}
+          </div>
         </div>
       </ScrollArea>
     </div>

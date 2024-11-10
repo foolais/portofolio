@@ -1,12 +1,15 @@
-import { useLocation } from "react-router-dom";
 import { Title } from "../title";
 import CareerCard from "./CareerCard";
 import { jobData } from "@/data/data";
 import { useMemo } from "react";
 
 const Career = () => {
-  const { pathname } = useLocation();
-  const isProfilePage = useMemo(() => pathname === "/profile", [pathname]);
+  const isProfilePage = useMemo(
+    () => localStorage.getItem("currentNav") === "profile",
+    []
+  );
+
+  console.log({ isProfilePage });
 
   return (
     <div className="mt-8">
@@ -14,8 +17,8 @@ const Career = () => {
       <div
         className={
           isProfilePage
-            ? "flex flex-col"
-            : "flex flex-col sm:flex-row md:flex-col sm:gap-3 md:gap-0"
+            ? "flex flex-col gap-4 mt-4"
+            : "flex flex-col sm:flex-row md:flex-col sm:gap-3 md:gap-0 mt-4"
         }
       >
         {jobData.map((job, index) => (
