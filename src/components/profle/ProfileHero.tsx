@@ -17,7 +17,7 @@ const ProfileHero: React.FC<{ isFullName?: boolean }> = ({
         <img
           src={theme === "dark" ? NightStar : BlueSky}
           alt="NightStar"
-          className="w-full h-full object-cover object-top"
+          className="w-full h-full object-cover object-top rounded-xl"
           loading="lazy"
         />
         <div className="w-full h-[105%] absolute top-0 z-10 gradient"></div>

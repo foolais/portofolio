@@ -3,7 +3,7 @@ import { memo } from "react";
 const ProfileDescription = memo(() => {
   return (
     <div className="w-11/12 md:w-5/6 font-semibold mt-4">
-      <p className="text-sm md:text-base leading-5 tracking-wide mb-2">
+      <p className="text-sm md:text-base leading-5 tracking-wide mb-1.5">
         A dedicated{" "}
         <span className="text-primary font-bold">frontend developer </span>{" "}
         based in <span className="text-primary font-bold"> Yogyakarta</span>,

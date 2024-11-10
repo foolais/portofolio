@@ -21,6 +21,9 @@ module.exports = {
       },
     },
     extend: {
+      screens: {
+        md: "830px",
+      },
       typography: {
         DEFAULT: {
           css: {

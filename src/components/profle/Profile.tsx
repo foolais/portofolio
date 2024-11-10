@@ -14,7 +14,7 @@ interface ProfileProps {
 }
 
 const Profile: React.FC<ProfileProps> = ({ isWithHero = false }) => {
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isMobile = useMediaQuery({ query: "(max-width: 830px)" });
 
   return (
     <div className="max-h-screen">

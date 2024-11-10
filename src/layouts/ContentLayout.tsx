@@ -7,7 +7,7 @@ const ContentLayout = ({ children }: { children: React.ReactNode }) => {
   const { theme } = useTheme();
 
   return (
-    <div className="lg:max-w-[80%] xl:max-w-[65%] mx-auto relative">
+    <div className="lg:max-w-[85%] xl:max-w-[65%] mx-auto relative">
       {children}
       {theme === "dark" && (
         <Suspense>

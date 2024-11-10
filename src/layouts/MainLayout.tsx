@@ -13,11 +13,7 @@ import {
 import { useNavigation } from "@/context/navigation-provider";
 import { Nav } from "@/types/types";
 
-interface Props {
-  className?: string;
-}
-
-const MainLayout = memo(({ className }: Props) => {
+const MainLayout = memo(() => {
   const { currentNav, setCurrentNav } = useNavigation();
 
   const topRef = useRef<HTMLDivElement>(null);
@@ -41,6 +37,10 @@ const MainLayout = memo(({ className }: Props) => {
     () => <Sidenav handleNavClick={handleNavClick} currentNav={currentNav} />,
     [handleNavClick, currentNav]
   );
+  const memoizedNavbar = useMemo(
+    () => <Navbar handleNavClick={handleNavClick} />,
+    [handleNavClick]
+  );
   const memoizedProfileAvatar = useMemo(() => <ProfileAvatar />, []);
   const memoizedNavTheme = useMemo(() => <NavTheme />, []);
 
@@ -53,11 +53,11 @@ const MainLayout = memo(({ className }: Props) => {
         <Separator className="w-full h-0.5 bg-primary mt-4" />
         {memoizedNavTheme}
       </div>
-      <ScrollArea className="md:w-auto md:min-w-[575px] md:max-h-[95vh] md:rounded-lg md:border-2 md:border-secondary">
-        <div className={cn("w-full h-full", className)}>
+      <ScrollArea className="md:w-auto md:min-w-[575px] lg:min-w-[700px] md:max-h-[95vh] md:rounded-lg md:border-2 md:border-secondary">
+        <div className="w-full h-screen">
           <div ref={topRef} />
-          <Navbar handleNavClick={handleNavClick} />
-          <div className="p-6">
+          {memoizedNavbar}
+          <div className="p-6 pb-28 md:pb-6">
             {currentNav === "home" ? (
               <HomeLayout />
             ) : currentNav === "profile" ? (
