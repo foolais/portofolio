@@ -18,7 +18,7 @@ const Career = () => {
         className={
           isProfilePage
             ? "flex flex-col gap-4 mt-4"
-            : "flex flex-col sm:flex-row md:flex-col sm:gap-3 md:gap-0 mt-4"
+            : "flex flex-col sm:flex-row md:flex-col sm:gap-3 md:gap-4 mt-4"
         }
       >
         {jobData.map((job, index) => (

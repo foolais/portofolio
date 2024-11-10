@@ -24,3 +24,5 @@ export interface EducationProps {
   major: string;
   degree: string;
 }
+
+export type Nav = "home" | "profile" | "projects" | "contact";

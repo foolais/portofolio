@@ -3,26 +3,30 @@ import ProfileAvatar from "@/components/profle/ProfileAvatar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/lib/utils";
 import { Separator } from "@radix-ui/react-separator";
-import { memo, useCallback, useMemo, useRef, useState } from "react";
+import { memo, useCallback, useMemo, useRef } from "react";
 import {
   HomeLayout,
   ProfileLayout,
   ProjectLayout,
   ContactLayout,
 } from "./index";
+import { useNavigation } from "@/context/navigation-provider";
+import { Nav } from "@/types/types";
 
 interface Props {
   className?: string;
 }
 
 const MainLayout = memo(({ className }: Props) => {
-  const [currentNav, setCurrentNav] = useState("home");
+  const { currentNav, setCurrentNav } = useNavigation();
 
   const topRef = useRef<HTMLDivElement>(null);
 
   const handleNavClick = useCallback(
     (name: string) => {
-      const navigatePath = name.toLocaleLowerCase();
+      const navigatePath = name.toLocaleLowerCase() as Nav;
+
+      console.log({ navigatePath });
 
       if (navigatePath === currentNav) {
         topRef.current?.scrollIntoView({ behavior: "smooth" });

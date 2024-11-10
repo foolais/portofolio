@@ -1,6 +1,6 @@
 import { BlueSky, NightStar } from "@/assets/images/images";
 import { cn } from "@/lib/utils";
-import { useTheme } from "../theme-provider";
+import { useTheme } from "../../context/theme-provider";
 import { lazy } from "react";
 
 const ProfileAvatar = lazy(() => import("./ProfileAvatar"));

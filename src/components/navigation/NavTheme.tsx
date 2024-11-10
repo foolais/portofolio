@@ -1,5 +1,5 @@
 import { Moon, Sun } from "lucide-react";
-import { useTheme } from "../theme-provider";
+import { useTheme } from "../../context/theme-provider";
 import { useEffect, useState } from "react";
 
 const NavTheme = () => {

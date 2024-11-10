@@ -1,4 +1,4 @@
-import { useTheme } from "@/components/theme-provider";
+import { useTheme } from "@/context/theme-provider";
 import { lazy, Suspense } from "react";
 
 const BackgroundBeams = lazy(() => import("@/components/ui/background-beams"));

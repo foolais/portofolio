@@ -1,7 +1,8 @@
 import { lazy, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import { ThemeProvider } from "./components/theme-provider";
+import { ThemeProvider } from "./context/theme-provider";
+import { NavigationProvider } from "./context/navigation-provider";
 
 const ContentLayout = lazy(() => import("./layouts/ContentLayout"));
 const MainLayout = lazy(() => import("./layouts/MainLayout"));
@@ -10,7 +11,9 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <ContentLayout>
-        <MainLayout />
+        <NavigationProvider>
+          <MainLayout />
+        </NavigationProvider>
       </ContentLayout>
     </ThemeProvider>
   </StrictMode>
