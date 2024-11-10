@@ -32,7 +32,6 @@ const MainLayout = memo(({ className }: Props) => {
         topRef.current?.scrollIntoView({ behavior: "smooth" });
       } else {
         setCurrentNav(navigatePath);
-        localStorage.setItem("currentNav", navigatePath);
       }
     },
     [currentNav]

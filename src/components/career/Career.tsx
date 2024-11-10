@@ -1,15 +1,13 @@
+import { useNavigation } from "@/context/navigation-provider";
 import { Title } from "../title";
 import CareerCard from "./CareerCard";
 import { jobData } from "@/data/data";
 import { useMemo } from "react";
 
 const Career = () => {
-  const isProfilePage = useMemo(
-    () => localStorage.getItem("currentNav") === "profile",
-    []
-  );
+  const { currentNav } = useNavigation();
 
-  console.log({ isProfilePage });
+  const isProfilePage = useMemo(() => currentNav === "profile", [currentNav]);
 
   return (
     <div className="mt-8">
