@@ -4,7 +4,6 @@ import { memo } from "react";
 import { KeepAlive } from "keepalive-for-react";
 
 const ProfileAvatar = memo(() => {
-  console.log("tes");
   return (
     <Avatar className="border-b-4 border-primary sm:w-40 sm:h-40 md:w-32 md:h-32">
       <KeepAlive activeCacheKey="profile-avatar-cache">

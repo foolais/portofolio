@@ -1,7 +1,6 @@
 import { Navbar, NavTheme, Sidenav } from "@/components/navigation";
 import ProfileAvatar from "@/components/profle/ProfileAvatar";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { cn } from "@/lib/utils";
 import { Separator } from "@radix-ui/react-separator";
 import { memo, useCallback, useMemo, useRef } from "react";
 import {
@@ -21,8 +20,6 @@ const MainLayout = memo(() => {
   const handleNavClick = useCallback(
     (name: string) => {
       const navigatePath = name.toLocaleLowerCase() as Nav;
-
-      console.log({ navigatePath });
 
       if (navigatePath === currentNav) {
         topRef.current?.scrollIntoView({ behavior: "smooth" });
