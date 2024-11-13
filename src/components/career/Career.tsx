@@ -23,7 +23,6 @@ const Career = () => {
           <CareerCard
             key={job.company}
             job={job}
-            isShowDetails={isProfilePage}
             isWithIcons={isProfilePage}
             className={
               isProfilePage && index % 2 === 0

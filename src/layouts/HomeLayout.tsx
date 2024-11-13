@@ -7,8 +7,8 @@ const HomeLayout = () => {
   return (
     <>
       <Profile isWithHero={true} />
-      <Career />
       <TechStack />
+      <Career />
       <CardContact isWithForm={false} />
     </>
   );

@@ -8,7 +8,6 @@ interface CardHeaderComponentProps
   title: string;
   description: DescriptionProps[];
   icon: React.ReactNode;
-  isShowDetails?: boolean;
   isWithIcons?: boolean;
 }
 
@@ -44,22 +43,13 @@ const CardHeaderComponent = React.forwardRef<
   CardHeaderComponentProps
 >(
   (
-    {
-      title,
-      description,
-      icon,
-      isWithIcons = true,
-      isShowDetails = false,
-      className,
-      ...props
-    },
+    { title, description, icon, isWithIcons = true, className, ...props },
     ref
   ) => (
     <div
       ref={ref}
       className={cn(
         "flex flex-row items-center gap-6 space-y-1.5 p-6",
-        isShowDetails && "pb-4",
         className
       )}
       {...props}

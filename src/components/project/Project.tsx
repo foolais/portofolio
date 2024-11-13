@@ -23,6 +23,8 @@ interface ProjectProps {
   demo: string;
 }
 
+console.log("project render");
+
 const ProjectCard = memo(({ project }: { project: ProjectProps }) => {
   const { images, description, title, technologies, github, demo } = project;
 

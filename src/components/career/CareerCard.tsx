@@ -7,14 +7,12 @@ import { cn } from "@/lib/utils";
 
 interface CareerCardProps {
   job: JobProps;
-  isShowDetails?: boolean;
   isWithIcons?: boolean;
   className?: string;
 }
 
 const CareerCard: React.FC<CareerCardProps> = ({
   job,
-  isShowDetails = false,
   isWithIcons,
   className,
 }) => {
@@ -28,10 +26,9 @@ const CareerCard: React.FC<CareerCardProps> = ({
           { text: job.date, Icon: CalendarDays },
         ]}
         icon={<Briefcase size={35} />}
-        isShowDetails={isShowDetails}
         isWithIcons={isWithIcons}
       />
-      {isShowDetails && job.description && job.technologies && (
+      {job.description && job.technologies && (
         <CardContent>
           <div className="mb-4">
             <p className="text-sm font-medium mb-2">Techologies</p>

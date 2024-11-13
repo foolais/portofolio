@@ -3,6 +3,7 @@ import { Download } from "lucide-react";
 import { Separator } from "../ui/separator";
 import { lazy, Suspense } from "react";
 import { useMediaQuery } from "react-responsive";
+import { useNavigation } from "@/context/navigation-provider";
 
 const ProfileHero = lazy(() => import("./ProfileHero"));
 const ProfileDescription = lazy(() => import("./ProfileDescription"));
@@ -15,6 +16,7 @@ interface ProfileProps {
 
 const Profile: React.FC<ProfileProps> = ({ isWithHero = false }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 830px)" });
+  const { currentNav } = useNavigation();
 
   return (
     <div className="max-h-screen">
@@ -28,7 +30,7 @@ const Profile: React.FC<ProfileProps> = ({ isWithHero = false }) => {
           </div>
         )}
         <div>
-          <ProfileDescription />
+          {currentNav === "profile" && <ProfileDescription />}
           <div className="mt-4">
             <Button className="flex items-center justify-center text-secondary gap-2 px-4">
               <span className="text-base font-bold">Download CV</span>
