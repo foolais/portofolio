@@ -15,7 +15,7 @@ const CardContact = () => {
   const { currentNav, setCurrentNav } = useNavigation();
 
   return (
-    <div className="w-11/12">
+    <div className={`${currentNav === "home" ? "pt-6" : ""} w-11/12`}>
       <Title text="Contact" href="/contact" />
       <Card className="sm:w-3/4 md:w-full my-4 dark:hover:bg-secondary/50 hover:cursor-default">
         <CardHeader className={currentNav === "contact" ? "pb-0" : "pb-4"}>

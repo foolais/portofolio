@@ -7,12 +7,8 @@ const Education = () => {
     <div className="mt-8">
       <Title text="Education" />
       <div className="flex flex-col gap-4 mt-4">
-        {educationData.map((education, index) => (
-          <EducationCard
-            key={education.name}
-            education={education}
-            className={index % 2 === 0 ? "place-self-start" : "place-self-end"}
-          />
+        {educationData.map((education) => (
+          <EducationCard key={education.name} education={education} />
         ))}
       </div>
     </div>

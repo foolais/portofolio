@@ -20,7 +20,9 @@ const CareerCard: React.FC<CareerCardProps> = ({
   const { currentNav } = useNavigation();
 
   return (
-    <Card className={cn("w-full sm:w-3/4 md:w-full cursor-default", className)}>
+    <Card
+      className={cn("w-full sm:w-3/4 md:w-11/12 cursor-default", className)}
+    >
       <CardHeaderComponent
         title={job.position}
         description={[

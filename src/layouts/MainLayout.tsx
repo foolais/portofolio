@@ -25,6 +25,7 @@ const MainLayout = memo(() => {
         topRef.current?.scrollIntoView({ behavior: "smooth" });
       } else {
         setCurrentNav(navigatePath);
+        topRef.current?.scrollIntoView({ behavior: "smooth" });
       }
     },
     [currentNav]

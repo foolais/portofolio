@@ -16,20 +16,11 @@ const Career = () => {
         className={
           isProfilePage
             ? "flex flex-col gap-4 mt-4"
-            : "flex flex-col sm:flex-row md:flex-col sm:gap-3 md:gap-4 mt-4"
+            : "flex sm:flex-row md:flex-col sm:gap-3 md:gap-4 mt-4"
         }
       >
-        {jobData.map((job, index) => (
-          <CareerCard
-            key={job.company}
-            job={job}
-            isWithIcons={isProfilePage}
-            className={
-              isProfilePage && index % 2 === 0
-                ? "place-self-start"
-                : "place-self-end"
-            }
-          />
+        {jobData.map((job) => (
+          <CareerCard key={job.company} job={job} isWithIcons={isProfilePage} />
         ))}
       </div>
     </div>
