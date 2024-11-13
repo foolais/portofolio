@@ -8,31 +8,27 @@ import {
   CardHeader,
   CardTitle,
 } from "../ui/card";
-import CardForm from "./CardForm";
 import { useNavigation } from "@/context/navigation-provider";
+import SocialMedia from "./SocialMedia";
 
-const CardContact: React.FC<{ isWithForm?: boolean }> = ({
-  isWithForm = true,
-}) => {
-  const { setCurrentNav } = useNavigation();
+const CardContact = () => {
+  const { currentNav, setCurrentNav } = useNavigation();
 
   return (
-    <div className="w-full">
-      <Title text="Contact" isBtnShow={!isWithForm} href="/contact" />
+    <div className="w-11/12">
+      <Title text="Contact" href="/contact" />
       <Card className="sm:w-3/4 md:w-full my-4 dark:hover:bg-secondary/50 hover:cursor-default">
-        <CardHeader>
+        <CardHeader className={currentNav === "contact" ? "pb-0" : "pb-4"}>
           <CardTitle className="text-xl font-bold flex items-center gap-2">
             <span>Get In Touch</span>
-            {isWithForm && <Rocket color="hsl(var(--foreground))" size={20} />}
+            <Rocket color="hsl(var(--foreground))" size={20} />
           </CardTitle>
           <CardDescription>
             Feel free to contact me for any work or suggestions.
           </CardDescription>
         </CardHeader>
         <CardContent>
-          {isWithForm ? (
-            <CardForm />
-          ) : (
+          {currentNav === "home" ? (
             <Button
               variant={"outline"}
               className="items-center justify-center gap-3 px-4"
@@ -41,6 +37,8 @@ const CardContact: React.FC<{ isWithForm?: boolean }> = ({
               <span className="text-base font-semibold">Contact Me</span>
               <Rocket color="hsl(var(--foreground))" size={20} />
             </Button>
+          ) : (
+            <SocialMedia />
           )}
         </CardContent>
       </Card>

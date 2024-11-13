@@ -4,6 +4,7 @@ import CareerDetails from "./CareerDetails";
 import { TechIcon } from "../techStack";
 import { JobProps } from "@/types/types";
 import { cn } from "@/lib/utils";
+import { useNavigation } from "@/context/navigation-provider";
 
 interface CareerCardProps {
   job: JobProps;
@@ -16,6 +17,8 @@ const CareerCard: React.FC<CareerCardProps> = ({
   isWithIcons,
   className,
 }) => {
+  const { currentNav } = useNavigation();
+
   return (
     <Card className={cn("w-full sm:w-3/4 md:w-full cursor-default", className)}>
       <CardHeaderComponent
@@ -38,7 +41,9 @@ const CareerCard: React.FC<CareerCardProps> = ({
               ))}
             </div>
           </div>
-          <CareerDetails description={job.description} />
+          {currentNav === "profile" && (
+            <CareerDetails description={job.description} />
+          )}
         </CardContent>
       )}
     </Card>

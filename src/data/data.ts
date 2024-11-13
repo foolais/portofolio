@@ -71,13 +71,13 @@ export const socialMediaData = [
     text: "wahyu_esya",
     images: Instagram,
     imagesName: "Instagram",
-    link: "https://www.instagram.com/wahyu_esya/",
+    link: "https://www.instagram.com/wahyu_esya",
   },
   {
     text: "wahyu.esya17@gmail.com",
     images: Gmail,
     imagesName: "Gmail",
-    link: "",
+    link: "https://mail.google.com",
   },
 ];
 
