@@ -20,12 +20,10 @@ const MainLayout = memo(() => {
   const handleNavClick = useCallback(
     (name: string) => {
       const navigatePath = name.toLocaleLowerCase() as Nav;
+      topRef.current?.scrollIntoView({ behavior: "smooth" });
 
-      if (navigatePath === currentNav) {
-        topRef.current?.scrollIntoView({ behavior: "smooth" });
-      } else {
+      if (navigatePath !== currentNav) {
         setCurrentNav(navigatePath);
-        topRef.current?.scrollIntoView({ behavior: "smooth" });
       }
     },
     [currentNav]
@@ -43,7 +41,7 @@ const MainLayout = memo(() => {
   const memoizedNavTheme = useMemo(() => <NavTheme />, []);
 
   return (
-    <div className="md:flex md:flex-row md:justify-between md:p-8 max-h-screen md:gap-4">
+    <div className="md:flex md:flex-row md:justify-between md:p-8 max-h-screen md:gap-4 lg:max-w-[85%] xl:max-w-[55%] mx-auto relative">
       <div className="flex-col hidden md:flex md:items-center md:max-w-[200px]">
         {memoizedProfileAvatar}
         <span className="font-light mt-1 mb-6">@wahyu_esya</span>

@@ -4,17 +4,14 @@ import "./index.css";
 import { ThemeProvider } from "./context/theme-provider";
 import { NavigationProvider } from "./context/navigation-provider";
 
-const ContentLayout = lazy(() => import("./layouts/ContentLayout"));
 const MainLayout = lazy(() => import("./layouts/MainLayout"));
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-      <ContentLayout>
-        <NavigationProvider>
-          <MainLayout />
-        </NavigationProvider>
-      </ContentLayout>
+      <NavigationProvider>
+        <MainLayout />
+      </NavigationProvider>
     </ThemeProvider>
   </StrictMode>
 );
