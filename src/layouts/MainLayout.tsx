@@ -51,7 +51,7 @@ const MainLayout = memo(() => {
         {memoizedNavTheme}
       </div>
       <ScrollArea className="md:w-auto md:min-w-[575px] lg:min-w-[700px] md:max-h-[95vh] md:rounded-lg md:border-2 md:border-secondary">
-        <div className="w-full h-screen">
+        <div className="w-full h-auto">
           <div ref={topRef} />
           {memoizedNavbar}
           <BackgroundBeamsWithCollision>

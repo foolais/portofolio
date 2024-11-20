@@ -66,7 +66,7 @@ const ProjectCardHeader = memo(
           src={images}
           alt={description}
           loading="lazy"
-          className="rounded-xl object-cover object-center min-h-[150px] min-w-[150px]"
+          className="rounded-xl object-cover object-left-top min-h-[200px] min-w-[200px]"
         />
       </CardHeader>
     );
