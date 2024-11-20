@@ -27,6 +27,7 @@ import {
   Proyek4,
   Proyek5,
   Proyek6,
+  Proyek7,
 } from "@/assets/images/images";
 
 export const navbarData = [
@@ -222,8 +223,24 @@ export const educationData = [
 
 export const projectsData = [
   {
+    title: "Slider Mobile App",
+    description:
+      "The Slider Mobile App is a React Native project featuring two sliders on a single screen, where images automatically slide, while videos are displayed without sliding functionality.",
+    technologies: [
+      {
+        name: "React Native",
+        image: React,
+      },
+    ],
+    github: "https://github.com/foolais/ImagesSlider",
+    demo: null,
+    images: Proyek7,
+    type: "mobile" as "web" | "mobile",
+  },
+  {
     title: "Anime Movie App",
-    description: "Anime Movie App",
+    description:
+      "The Anime Movie App lets users explore trending and upcoming anime, view details, and search for favorite titles, all with a Netflix-style design.",
     technologies: [
       {
         name: "TypeScript",
@@ -241,10 +258,12 @@ export const projectsData = [
     github: "https://github.com/foolais/anime-movie-ts",
     demo: "https://anime-movie-ts.vercel.app",
     images: Proyek1,
+    type: "web" as "web" | "mobile",
   },
   {
     title: "React Survey",
-    description: "React Survey",
+    description:
+      "The React Survey Project is a survey app with 10 questions and a 10-minute time limit, allowing users to review their answers after submitting.",
     technologies: [
       {
         name: "Javascript",
@@ -262,10 +281,12 @@ export const projectsData = [
     github: "https://github.com/foolais/react-survey",
     demo: "https://react-survey-app-eight.vercel.app/",
     images: Proyek2,
+    type: "web" as "web" | "mobile",
   },
   {
     title: "FrontEnd Foolais Store",
-    description: "FrontEnd Foolais Store",
+    description:
+      "A Point of Sale (POS) System at Warung Soto Bakso Hanna, offering features like menu and table management, sales tracking, and order history to boost efficiency and accuracy.",
     technologies: [
       {
         name: "Javascript",
@@ -283,10 +304,12 @@ export const projectsData = [
     github: "https://github.com/foolais/foolais-store-frontend",
     demo: "https://foolais-store.vercel.app/",
     images: Proyek3,
+    type: "web" as "web" | "mobile",
   },
   {
     title: "BackEnd Foolais Store",
-    description: "BackEnd Foolais Store",
+    description:
+      "A Point of Sale (POS) System at Warung Soto Bakso Hanna, offering features like menu and table management, sales tracking, and order history to boost efficiency and accuracy.",
     technologies: [
       {
         name: "Javascript",
@@ -309,10 +332,12 @@ export const projectsData = [
     github: "https://github.com/foolais/store-api",
     demo: "https://foolais-store-api.vercel.app/",
     images: Proyek4,
+    type: "web" as "web" | "mobile",
   },
   {
     title: "Ceki Game",
-    description: "Ceki Game",
+    description:
+      "The Ceki Game Project is built to assist with score calculation, eliminating the need for players to remember their scores, ensuring a smoother and more enjoyable gameplay experience. ",
     technologies: [
       {
         name: "Javascript",
@@ -330,10 +355,12 @@ export const projectsData = [
     github: "https://github.com/foolais/ceki-game",
     demo: "https://ceki-game.vercel.app/",
     images: Proyek5,
+    type: "web" as "web" | "mobile",
   },
   {
     title: "Kerjakan",
-    description: "Kerjakan",
+    description:
+      "The Kerjakan project is designed to help users search for job vacancies, serving as the final task for the Sanbercode bootcamp.",
     technologies: [
       {
         name: "Javascript",
@@ -351,5 +378,6 @@ export const projectsData = [
     github: "https://github.com/foolais/kerjakan",
     demo: "https://kerjakan.netlify.app/",
     images: Proyek6,
+    type: "web" as "web" | "mobile",
   },
 ];

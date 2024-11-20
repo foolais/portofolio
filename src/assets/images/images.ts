@@ -8,6 +8,7 @@ import Proyek3 from "./proyek-3.jpg";
 import Proyek4 from "./proyek-4.jpg";
 import Proyek5 from "./proyek-5.jpg";
 import Proyek6 from "./proyek-6.jpg";
+import Proyek7 from "./proyek-7.jpg";
 
 export {
   ProfilePicture,
@@ -20,4 +21,5 @@ export {
   Proyek4,
   Proyek5,
   Proyek6,
+  Proyek7,
 };

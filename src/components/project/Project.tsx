@@ -13,6 +13,7 @@ import { Button } from "../ui/button";
 import { ArrowUpRight, Github } from "lucide-react";
 import { TechProps } from "@/types/types";
 import { memo, useMemo } from "react";
+import { cn } from "@/lib/utils";
 
 interface ProjectProps {
   title: string;
@@ -20,17 +21,30 @@ interface ProjectProps {
   images: string;
   technologies: TechProps[];
   github: string;
-  demo: string;
+  demo: string | null;
+  type: "web" | "mobile";
 }
 
-console.log("project render");
-
 const ProjectCard = memo(({ project }: { project: ProjectProps }) => {
-  const { images, description, title, technologies, github, demo } = project;
+  const {
+    images,
+    description,
+    title,
+    technologies,
+    github,
+    demo,
+    type = "web",
+  } = project;
 
   const memoizedHeader = useMemo(
-    () => <ProjectCardHeader images={images} description={description} />,
-    [images, description]
+    () => (
+      <ProjectCardHeader
+        images={images}
+        description={description}
+        type={type}
+      />
+    ),
+    [images, description, type]
   );
 
   const memoizedContent = useMemo(
@@ -45,7 +59,7 @@ const ProjectCard = memo(({ project }: { project: ProjectProps }) => {
   );
 
   const memoizedFooter = useMemo(
-    () => <ProjectCardFooter github={github} demo={demo} />,
+    () => <ProjectCardFooter github={github} demo={demo ?? ""} />,
     [github, demo]
   );
 
@@ -59,14 +73,25 @@ const ProjectCard = memo(({ project }: { project: ProjectProps }) => {
 });
 
 const ProjectCardHeader = memo(
-  ({ images, description }: { images: string; description: string }) => {
+  ({
+    images,
+    description,
+    type,
+  }: {
+    images: string;
+    description: string;
+    type: "web" | "mobile";
+  }) => {
     return (
       <CardHeader>
         <img
           src={images}
           alt={description}
           loading="lazy"
-          className="rounded-xl object-cover object-left-top min-h-[200px] min-w-[200px]"
+          className={cn(
+            "rounded-xl min-h-[200px] max-h-[200px] min-w-[200px]",
+            type === "web" ? "object-cover" : "object-contain"
+          )}
         />
       </CardHeader>
     );
@@ -86,7 +111,9 @@ const ProjectCardContent = memo(
     return (
       <CardContent className="py-0">
         <CardTitle className="text-xl">{title}</CardTitle>
-        <CardDescription>{description}</CardDescription>
+        <CardDescription className="mt-1 mb-2 min-h-24">
+          {description}
+        </CardDescription>
         <div className="flex flex-wrap items-center gap-3 mt-2">
           {technologies.map((tech, index) => (
             <TechIcon key={index} {...tech} />
@@ -112,16 +139,18 @@ const ProjectCardFooter = memo(
               <p>Github</p>
             </Button>
           </a>
-          <a href={demo} target="_blank" rel="noopener noreferrer">
-            <Button
-              size={"sm"}
-              variant={"outline"}
-              className="flex items-center gap-1"
-            >
-              <p>Demo</p>
-              <ArrowUpRight size={15} />
-            </Button>
-          </a>
+          {demo && (
+            <a href={demo} target="_blank" rel="noopener noreferrer">
+              <Button
+                size={"sm"}
+                variant={"outline"}
+                className="flex items-center gap-1"
+              >
+                <p>Demo</p>
+                <ArrowUpRight size={15} />
+              </Button>
+            </a>
+          )}
         </div>
       </CardFooter>
     );
