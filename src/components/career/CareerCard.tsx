@@ -35,7 +35,7 @@ const CareerCard: React.FC<CareerCardProps> = ({
         <CardContent>
           <div className="mb-4">
             <p className="text-sm font-medium mb-2">Techologies</p>
-            <div className="flex gap-1">
+            <div className="flex gap-1.5">
               {job.technologies.map((tech, index) => (
                 <TechIcon key={index} {...tech} />
               ))}

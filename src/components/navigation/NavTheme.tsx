@@ -21,7 +21,7 @@ const NavTheme = () => {
     <div className="w-full">
       <p className="tracking-widest mt-4 mb-2 text-sm">Theme</p>
       <div
-        className="bg-primary text-background flex items-center  gap-3 px-3 py-2 rounded-md cursor-pointer hover:bg-primary/90"
+        className="bg-primary text-background flex items-center  gap-3 px-3 py-2 rounded-md cursor-pointer hover:bg-opacity-50"
         onClick={handleChangeTheme}
       >
         {isDarkMode ? (

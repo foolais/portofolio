@@ -12,9 +12,30 @@ import {
 import { useNavigation } from "@/context/navigation-provider";
 import { Nav } from "@/types/types";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
+import { useTheme } from "@/context/theme-provider";
+
+const Layout = memo(() => {
+  const { currentNav } = useNavigation();
+  return (
+    <div className="p-6 pb-28 md:pb-6">
+      {currentNav === "home" ? (
+        <HomeLayout />
+      ) : currentNav === "profile" ? (
+        <ProfileLayout />
+      ) : currentNav === "projects" ? (
+        <ProjectLayout />
+      ) : currentNav === "contact" ? (
+        <ContactLayout />
+      ) : (
+        <></>
+      )}
+    </div>
+  );
+});
 
 const MainLayout = memo(() => {
   const { currentNav, setCurrentNav } = useNavigation();
+  const { theme } = useTheme();
 
   const topRef = useRef<HTMLDivElement>(null);
 
@@ -50,25 +71,17 @@ const MainLayout = memo(() => {
         <Separator className="w-full h-0.5 bg-primary mt-4" />
         {memoizedNavTheme}
       </div>
-      <ScrollArea className="md:w-auto md:min-w-[575px] lg:min-w-[700px] md:max-h-[95vh] md:rounded-lg md:border-2 md:border-secondary">
+      <ScrollArea className="md:w-auto md:min-w-[575px] lg:min-w-[700px] md:max-h-[95vh] md:rounded-lg md:border-[1px] md:border-primary">
         <div className="w-full h-auto">
           <div ref={topRef} />
           {memoizedNavbar}
-          <BackgroundBeamsWithCollision>
-            <div className="p-6 pb-28 md:pb-6">
-              {currentNav === "home" ? (
-                <HomeLayout />
-              ) : currentNav === "profile" ? (
-                <ProfileLayout />
-              ) : currentNav === "projects" ? (
-                <ProjectLayout />
-              ) : currentNav === "contact" ? (
-                <ContactLayout />
-              ) : (
-                <></>
-              )}
-            </div>
-          </BackgroundBeamsWithCollision>
+          {theme === "dark" ? (
+            <BackgroundBeamsWithCollision>
+              <Layout />
+            </BackgroundBeamsWithCollision>
+          ) : (
+            <Layout />
+          )}
         </div>
       </ScrollArea>
     </div>
