@@ -11,6 +11,7 @@ import {
 } from "./index";
 import { useNavigation } from "@/context/navigation-provider";
 import { Nav } from "@/types/types";
+import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 
 const MainLayout = memo(() => {
   const { currentNav, setCurrentNav } = useNavigation();
@@ -53,19 +54,21 @@ const MainLayout = memo(() => {
         <div className="w-full h-screen">
           <div ref={topRef} />
           {memoizedNavbar}
-          <div className="p-6 pb-28 md:pb-6">
-            {currentNav === "home" ? (
-              <HomeLayout />
-            ) : currentNav === "profile" ? (
-              <ProfileLayout />
-            ) : currentNav === "projects" ? (
-              <ProjectLayout />
-            ) : currentNav === "contact" ? (
-              <ContactLayout />
-            ) : (
-              <></>
-            )}
-          </div>
+          <BackgroundBeamsWithCollision>
+            <div className="p-6 pb-28 md:pb-6">
+              {currentNav === "home" ? (
+                <HomeLayout />
+              ) : currentNav === "profile" ? (
+                <ProfileLayout />
+              ) : currentNav === "projects" ? (
+                <ProjectLayout />
+              ) : currentNav === "contact" ? (
+                <ContactLayout />
+              ) : (
+                <></>
+              )}
+            </div>
+          </BackgroundBeamsWithCollision>
         </div>
       </ScrollArea>
     </div>
