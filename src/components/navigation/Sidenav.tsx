@@ -17,7 +17,7 @@ const Sidenav = ({ handleNavClick, currentNav }: Props) => {
           className={cn(
             "flex items-center justify-between w-full py-1 px-3 hover:bg-secondary rounded-md cursor-pointer",
             currentNav === name.toLocaleLowerCase()
-              ? "bg-primary text-background hover:bg-primary/90"
+              ? "bg-primary text-background hover:bg-primary hover:opacity-80"
               : ""
           )}
           onClick={() => handleNavClick(name)}

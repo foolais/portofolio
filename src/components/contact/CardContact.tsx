@@ -15,7 +15,9 @@ const CardContact = () => {
   const { currentNav } = useNavigation();
 
   return (
-    <div className={cn(currentNav === "contact" && "h-[75vh]", "w-full")}>
+    <div
+      className={cn(currentNav === "contact" ? "h-[75vh]" : "pt-6", "w-full")}
+    >
       <Title text="Contact" href="/contact" />
       <Card className="w-full my-4 dark:hover:bg-secondary/50 hover:cursor-default">
         <CardHeader className="pb-0">
