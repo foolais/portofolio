@@ -24,7 +24,7 @@ const Profile: React.FC<ProfileProps> = ({ isWithHero = false }) => {
         {isWithHero && isMobile ? (
           <ProfileHero />
         ) : (
-          <div className="w-11/12">
+          <div className="w-full">
             <ProfileName isFullName={true} />
             <Separator />
           </div>

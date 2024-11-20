@@ -12,12 +12,12 @@ import { useNavigation } from "@/context/navigation-provider";
 import SocialMedia from "./SocialMedia";
 
 const CardContact = () => {
-  const { currentNav, setCurrentNav } = useNavigation();
+  const { currentNav } = useNavigation();
 
   return (
-    <div className={`${currentNav === "home" ? "pt-6" : ""} w-11/12`}>
+    <div className={`${currentNav === "home" ? "pt-6" : ""} w-fulll`}>
       <Title text="Contact" href="/contact" />
-      <Card className="sm:w-3/4 md:w-full my-4 dark:hover:bg-secondary/50 hover:cursor-default">
+      <Card className="w-full my-4 dark:hover:bg-secondary/50 hover:cursor-default">
         <CardHeader className={currentNav === "contact" ? "pb-0" : "pb-4"}>
           <CardTitle className="text-xl font-bold flex items-center gap-2">
             <span>Get In Touch</span>
@@ -28,18 +28,7 @@ const CardContact = () => {
           </CardDescription>
         </CardHeader>
         <CardContent>
-          {currentNav === "home" ? (
-            <Button
-              variant={"outline"}
-              className="items-center justify-center gap-3 px-4"
-              onClick={() => setCurrentNav("contact")}
-            >
-              <span className="text-base font-semibold">Contact Me</span>
-              <Rocket color="hsl(var(--foreground))" size={20} />
-            </Button>
-          ) : (
-            <SocialMedia />
-          )}
+          <SocialMedia />
         </CardContent>
       </Card>
     </div>
