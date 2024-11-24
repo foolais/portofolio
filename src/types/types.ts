@@ -26,3 +26,10 @@ export interface EducationProps {
 }
 
 export type Nav = "home" | "profile" | "projects" | "contact";
+
+export interface SocialMediaProps {
+  type: string;
+  text: string;
+  url: string | null;
+  icon?: React.ReactNode;
+}

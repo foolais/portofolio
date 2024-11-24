@@ -5,8 +5,8 @@ import { TechProps } from "@/types/types";
 
 const TechStack = () => {
   return (
-    <div className="w-full mt-8">
-      <Title text="Technologies that I use" />
+    <div className="w-full mt-6">
+      <Title text="Tech Stack" />
       <div className="flex flex-wrap items-center gap-3 my-4">
         {techStackData.map(({ name, image }: TechProps) => {
           return (

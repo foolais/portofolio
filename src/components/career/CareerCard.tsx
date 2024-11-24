@@ -33,13 +33,10 @@ const CareerCard: React.FC<CareerCardProps> = ({
       />
       {job.description && job.technologies && (
         <CardContent>
-          <div className="mb-4">
-            <p className="text-sm font-medium mb-2">Techologies</p>
-            <div className="flex gap-1.5">
-              {job.technologies.map((tech, index) => (
-                <TechIcon key={index} {...tech} />
-              ))}
-            </div>
+          <div className="flex gap-1.5 mb-4">
+            {job.technologies.map((tech, index) => (
+              <TechIcon key={index} {...tech} />
+            ))}
           </div>
           {currentNav === "profile" && (
             <CareerDetails description={job.description} />

@@ -11,7 +11,7 @@ const Career = () => {
   const isProfilePage = useMemo(() => currentNav === "profile", [currentNav]);
 
   return (
-    <div className="mt-8">
+    <div className="mt-6">
       <Title text="Career" />
       <div
         className={cn(

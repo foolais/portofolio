@@ -33,7 +33,7 @@ const Profile: React.FC<ProfileProps> = ({ isWithHero = false }) => {
           {currentNav === "profile" && <ProfileDescription />}
           <div className={`${isWithHero && "ml-4 md:ml-0"} mt-4 `}>
             <Button className="flex items-center justify-center text-secondary gap-2 px-4">
-              <span className="text-base font-bold">Download CV</span>
+              <span className="text-base font-bold">Resume</span>
               <Download color="hsl(var(--background))" size={20} />
             </Button>
           </div>

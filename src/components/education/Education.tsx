@@ -4,7 +4,7 @@ import EducationCard from "./EducationCard";
 
 const Education = () => {
   return (
-    <div className="mt-8">
+    <div className="mt-6">
       <Title text="Education" />
       <div className="flex flex-col gap-4 mt-4">
         {educationData.map((education) => (

@@ -2,6 +2,8 @@ import { navbarData } from "@/data/data";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
+import { Separator } from "../ui/separator";
+import Contact from "../contact/Contact";
 
 interface Props {
   handleNavClick: (name: string) => void;
@@ -42,6 +44,8 @@ const Sidenav = ({ handleNavClick, currentNav }: Props) => {
           </Button>
         </div>
       ))}
+      <Separator className="my-2" />
+      <Contact />
     </div>
   );
 };

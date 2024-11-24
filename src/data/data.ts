@@ -1,11 +1,11 @@
 import {
-  Github,
-  Gmail,
-  Instagram,
-  LinkedIn,
-  WhatsApp,
-} from "@/assets/icons/icon";
-import { CodeXml, Rocket, Home, User } from "lucide-react";
+  CodeXml,
+  Home,
+  User,
+  GithubIcon,
+  Mail,
+  LinkedinIcon,
+} from "lucide-react";
 import {
   CSS,
   Express,
@@ -43,42 +43,26 @@ export const navbarData = [
     icon: CodeXml,
     name: "Projects",
   },
-  {
-    icon: Rocket,
-    name: "Contact",
-  },
 ];
 
 export const socialMediaData = [
   {
-    text: "Wahyu Esya Nasution",
-    images: LinkedIn,
-    imagesName: "LinkedIn",
-    link: "https://www.linkedin.com/in/wahyuesyanasution",
-  },
-  {
-    text: "Foolais",
-    images: Github,
-    imagesName: "Github",
-    link: "https://github.com/foolais",
-  },
-  {
-    text: "089524038348",
-    images: WhatsApp,
-    imagesName: "WhatsApp",
-    link: "https://wa.me/089524038348",
-  },
-  {
-    text: "wahyu_esya",
-    images: Instagram,
-    imagesName: "Instagram",
-    link: "https://www.instagram.com/wahyu_esya",
-  },
-  {
+    type: "Gmail",
     text: "wahyu.esya17@gmail.com",
-    images: Gmail,
-    imagesName: "Gmail",
-    link: "https://mail.google.com",
+    url: null,
+    icon: Mail,
+  },
+  {
+    type: "LinkedIn",
+    text: "Wahyu Esya Nasution",
+    url: "https://www.linkedin.com/in/wahyuesyanasution",
+    icon: LinkedinIcon,
+  },
+  {
+    type: "Github",
+    text: "Foolais",
+    url: "https://github.com/foolais",
+    icon: GithubIcon,
   },
 ];
 

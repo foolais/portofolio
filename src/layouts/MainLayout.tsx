@@ -1,18 +1,13 @@
 import { Navbar, NavTheme, Sidenav } from "@/components/navigation";
 import ProfileAvatar from "@/components/profle/ProfileAvatar";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Separator } from "@radix-ui/react-separator";
 import { memo, useCallback, useMemo, useRef } from "react";
-import {
-  HomeLayout,
-  ProfileLayout,
-  ProjectLayout,
-  ContactLayout,
-} from "./index";
+import { HomeLayout, ProfileLayout, ProjectLayout } from "./index";
 import { useNavigation } from "@/context/navigation-provider";
 import { Nav } from "@/types/types";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { useTheme } from "@/context/theme-provider";
+import { Separator } from "@/components/ui/separator";
 
 const Layout = memo(() => {
   const { currentNav } = useNavigation();
@@ -24,8 +19,6 @@ const Layout = memo(() => {
         <ProfileLayout />
       ) : currentNav === "projects" ? (
         <ProjectLayout />
-      ) : currentNav === "contact" ? (
-        <ContactLayout />
       ) : (
         <></>
       )}
@@ -68,10 +61,10 @@ const MainLayout = memo(() => {
         {memoizedProfileAvatar}
         <span className="font-light mt-1 mb-6">@wahyu_esya</span>
         {memoizedSidenav}
-        <Separator className="w-full h-0.5 bg-primary mt-4" />
+        <Separator className="my-2" />
         {memoizedNavTheme}
       </div>
-      <ScrollArea className="md:w-auto md:min-w-[575px] lg:min-w-[700px] md:max-h-[95vh] md:rounded-lg md:border-[1px] md:border-primary">
+      <ScrollArea className="md:w-auto md:min-w-[575px] lg:min-w-[700px] md:max-h-[95vh] md:rounded-lg md:border-primary">
         <div className="w-full h-auto">
           <div ref={topRef} />
           {memoizedNavbar}
