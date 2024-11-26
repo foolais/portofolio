@@ -32,11 +32,7 @@ const Contact: React.FC<ContactProps> = ({ isInSideNav = true }) => {
 
   return (
     <div className={isInSideNav ? "" : "mt-6"}>
-      {isInSideNav ? (
-        <p className="tracking-widest ml-3 mb-2 font-semibold">Contact</p>
-      ) : (
-        <Title text="Contact" />
-      )}
+      {!isInSideNav && <Title text="Contact" />}
       <div
         className={cn(
           "flex flex-wrap",
