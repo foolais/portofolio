@@ -11,7 +11,10 @@ const TechIcon = (data: TechProps) => {
   return (
     <TooltipProvider>
       <Tooltip>
-        <TooltipTrigger asChild>
+        <TooltipTrigger
+          asChild
+          className="cursor-pointer hover:scale-110 transition duration-300 ease-in-out "
+        >
           <Button variant={"outline"} size={"icon"}>
             <img
               src={data.image}
@@ -21,7 +24,11 @@ const TechIcon = (data: TechProps) => {
             />
           </Button>
         </TooltipTrigger>
-        <TooltipContent>{data.name}</TooltipContent>
+        <TooltipContent>
+          <p className="bg-primary bg-clip-text text-transparent">
+            {data.name}
+          </p>
+        </TooltipContent>
       </Tooltip>
     </TooltipProvider>
   );

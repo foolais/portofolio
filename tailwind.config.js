@@ -70,6 +70,10 @@ module.exports = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
+      textColor: {
+        primary:
+          "linear-gradient(to top, hsl(var(--primary)), hsl(var(--primary-foreground)))",
+      },
       borderColor: {
         primary: "hsl(var(--primary))",
       },

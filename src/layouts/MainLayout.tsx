@@ -59,7 +59,9 @@ const MainLayout = memo(() => {
     <div className="md:flex md:flex-row md:justify-between md:p-8 max-h-screen md:gap-4 lg:max-w-[85%] xl:max-w-[55%] mx-auto relative">
       <div className="flex-col hidden md:flex md:items-center md:max-w-[200px]">
         {memoizedProfileAvatar}
-        <span className="font-light mt-1 mb-6">@wahyu_esya</span>
+        <span className="font-semibold mt-1 mb-6 bg-primary bg-clip-text text-transparent">
+          @wahyu_esya
+        </span>
         {memoizedSidenav}
         <Separator className="my-2" />
         {memoizedNavTheme}

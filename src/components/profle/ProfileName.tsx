@@ -6,7 +6,8 @@ const ProfileName: React.FC<{ isFullName: boolean }> = ({ isFullName }) => {
     <div className={"w-full z-10 mb-3"}>
       <p className="font-bold text-xl leading-5 mb-1">Hi there 👋</p>
       <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold sm:tracking-wider leading-5">
-        I'm <span className="text-primary">Wahyu</span>{" "}
+        I'm{" "}
+        <span className="bg-primary bg-clip-text text-transparent">Wahyu</span>{" "}
         {isFullName ? "Esya Nasution" : ""}
       </h1>
       <div className="text-sm sm:text-xl lg:text-2xl font-bold md:mt-1 sm:tracking-wide leading-5 flex gap-2 items-center">
