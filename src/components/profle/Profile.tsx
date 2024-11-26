@@ -31,7 +31,7 @@ const Profile: React.FC<ProfileProps> = ({ isWithHero = false }) => {
         )}
         <div>
           {currentNav === "profile" && <ProfileDescription />}
-          <div className={`${isWithHero && "ml-4 md:ml-0"} mt-4 `}>
+          <div className={`${isWithHero && "ml-0 sm:ml-11 md:ml-0"} mt-4 `}>
             <Button className="flex items-center justify-center gap-2 px-4">
               <span className="text-base font-bold">Resume</span>
               <Download color="hsl(var(--background))" size={20} />
