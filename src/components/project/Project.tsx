@@ -14,6 +14,7 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { TechProps } from "@/types/types";
 import { memo, useMemo } from "react";
 import { cn } from "@/lib/utils";
+import { Tilt } from "react-tilt";
 
 interface ProjectProps {
   title: string;
@@ -64,11 +65,13 @@ const ProjectCard = memo(({ project }: { project: ProjectProps }) => {
   );
 
   return (
-    <Card className="w-full cursor-default flex flex-col justify-between">
-      {memoizedHeader}
-      {memoizedContent}
-      {memoizedFooter}
-    </Card>
+    <Tilt options={{ max: 10, scale: 1.05, perspective: 1600, axis: "Y" }}>
+      <Card className="w-full cursor-default flex flex-col justify-between">
+        {memoizedHeader}
+        {memoizedContent}
+        {memoizedFooter}
+      </Card>
+    </Tilt>
   );
 });
 
@@ -135,17 +138,13 @@ const ProjectCardFooter = memo(
               variant={"accent"}
               className="flex items-center gap-1"
             >
-              <Github size={15} />
-              <p>Github</p>
+              <Github size={15} color="hsl(var(--primary))" />
+              <p className="text-primary">Github</p>
             </Button>
           </a>
           {demo && (
             <a href={demo} target="_blank" rel="noopener noreferrer">
-              <Button
-                size={"sm"}
-                variant={"outline"}
-                className="flex items-center gap-1"
-              >
+              <Button size={"sm"} className="flex items-center gap-1">
                 <p>Demo</p>
                 <ArrowUpRight size={15} />
               </Button>

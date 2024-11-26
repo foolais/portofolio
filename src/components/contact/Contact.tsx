@@ -43,9 +43,9 @@ const Contact: React.FC<ContactProps> = ({ isInSideNav = true }) => {
           <div
             key={index}
             className={cn(
-              "flex items-center justify-between gap-3 px-3 py-1 hover:bg-secondary rounded-md cursor-pointer",
+              "bg-background flex items-center justify-between gap-3 px-3 py-1 hover:bg-secondary rounded-md cursor-pointer",
               !isInSideNav &&
-                "bg-secondary dark:bg-secondary/50 hover:bg-secondary hover:opacity-80"
+                "dark:bg-secondary/50 hover:bg-secondary hover:opacity-80 rounded-xl border border-slate-300 dark:border-slate-800 space-y-1.5"
             )}
             onClick={() => onAction(data)}
           >
