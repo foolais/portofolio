@@ -8,7 +8,6 @@ interface CardHeaderComponentProps
   title: string;
   description: DescriptionProps[];
   icon: React.ReactNode;
-  isWithIcons?: boolean;
 }
 
 const Card = React.forwardRef<
@@ -41,38 +40,30 @@ CardHeader.displayName = "CardHeader";
 const CardHeaderComponent = React.forwardRef<
   HTMLDivElement,
   CardHeaderComponentProps
->(
-  (
-    { title, description, icon, isWithIcons = true, className, ...props },
-    ref
-  ) => (
+>(({ title, description, icon, className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "flex flex-row items-center gap-6 space-y-1.5 p-6",
+      className
+    )}
+    {...props}
+  >
     <div
-      ref={ref}
-      className={cn(
-        "flex flex-row items-center gap-6 space-y-1.5 p-6",
-        className
-      )}
-      {...props}
+      className={cn("p-4 md:p-6 bg-background w-max h-max rounded-xl shadow")}
     >
-      <div
-        className={cn(
-          "p-4 md:p-6 bg-background w-max h-max rounded-xl shadow",
-          isWithIcons ? "block" : "sm:hidden md:block"
-        )}
-      >
-        {icon}
-      </div>
-      <div>
-        <CardTitle>{title}</CardTitle>
-        <div className="grid gap-2 pt-2">
-          {description.map(({ text, Icon }, index) => (
-            <CardDescriptionList key={index} text={text} Icon={Icon} />
-          ))}
-        </div>
+      {icon}
+    </div>
+    <div>
+      <CardTitle>{title}</CardTitle>
+      <div className="grid gap-2 pt-2">
+        {description.map(({ text, Icon }, index) => (
+          <CardDescriptionList key={index} text={text} Icon={Icon} />
+        ))}
       </div>
     </div>
-  )
-);
+  </div>
+));
 
 CardHeaderComponent.displayName = "CardHeaderComponent";
 

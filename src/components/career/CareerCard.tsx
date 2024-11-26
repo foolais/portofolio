@@ -9,15 +9,10 @@ import { Tilt } from "react-tilt";
 
 interface CareerCardProps {
   job: JobProps;
-  isWithIcons?: boolean;
   className?: string;
 }
 
-const CareerCard: React.FC<CareerCardProps> = ({
-  job,
-  isWithIcons,
-  className,
-}) => {
+const CareerCard: React.FC<CareerCardProps> = ({ job, className }) => {
   const { currentNav } = useNavigation();
 
   return (
@@ -31,7 +26,6 @@ const CareerCard: React.FC<CareerCardProps> = ({
             { text: job.date, Icon: CalendarDays },
           ]}
           icon={<Briefcase size={35} />}
-          isWithIcons={isWithIcons}
         />
         {job.description && job.technologies && (
           <CardContent>
