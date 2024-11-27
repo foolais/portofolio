@@ -2,24 +2,26 @@ import ProfilePicture from "./profilePicture.png";
 import Waves from "./waves.jpg";
 import NightStar from "./night-star.jpg";
 import BlueSky from "./blue-sky.jpg";
-import Proyek1 from "./proyek-1.jpg";
-import Proyek2 from "./proyek-2.jpg";
-import Proyek3 from "./proyek-3.jpg";
-import Proyek4 from "./proyek-4.jpg";
-import Proyek5 from "./proyek-5.jpg";
-import Proyek6 from "./proyek-6.jpg";
-import Proyek7 from "./proyek-7.jpg";
+import ProjectPortofolio from "./project-portofolio.jpg";
+import ProjectImagesSlider from "./project-images-slider.jpg";
+import ProjectAnimeTs from "./project-anime-ts.jpg";
+import ProjectSurvey from "./project-survey.jpg";
+import ProjectFeStore from "./project-fe-store.jpg";
+import ProjectBeStore from "./project-be-store.jpg";
+import ProjectCekiGame from "./project-ceki-game.jpg";
+import ProjectKerjakan from "./project-kerjakan.jpg";
 
 export {
   ProfilePicture,
   Waves,
   NightStar,
   BlueSky,
-  Proyek1,
-  Proyek2,
-  Proyek3,
-  Proyek4,
-  Proyek5,
-  Proyek6,
-  Proyek7,
+  ProjectPortofolio,
+  ProjectImagesSlider,
+  ProjectAnimeTs,
+  ProjectSurvey,
+  ProjectFeStore,
+  ProjectBeStore,
+  ProjectCekiGame,
+  ProjectKerjakan,
 };

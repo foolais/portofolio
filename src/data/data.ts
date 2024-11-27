@@ -21,13 +21,14 @@ import {
   Vue,
 } from "@/assets/icons/tech";
 import {
-  Proyek1,
-  Proyek2,
-  Proyek3,
-  Proyek4,
-  Proyek5,
-  Proyek6,
-  Proyek7,
+  ProjectPortofolio,
+  ProjectImagesSlider,
+  ProjectAnimeTs,
+  ProjectSurvey,
+  ProjectFeStore,
+  ProjectBeStore,
+  ProjectCekiGame,
+  ProjectKerjakan,
 } from "@/assets/images/images";
 
 export const navbarData = [
@@ -207,6 +208,29 @@ export const educationData = [
 
 export const projectsData = [
   {
+    title: "Portofolio",
+    description:
+      " A portfolio built using TypeScript, Tailwind CSS, ShadCN UI, and Aceternity UI.",
+    technologies: [
+      {
+        name: "TypeScript",
+        image: TS,
+      },
+      {
+        name: "React.js",
+        image: React,
+      },
+      {
+        name: "Tailwind CSS",
+        image: Tailwind,
+      },
+    ],
+    github: "https://github.com/foolais/portofolio",
+    demo: null,
+    images: ProjectPortofolio,
+    type: "web" as "web" | "mobile",
+  },
+  {
     title: "Slider Mobile App",
     description:
       "The Slider Mobile App is a React Native project featuring two sliders on a single screen, where images automatically slide, while videos are displayed without sliding functionality.",
@@ -222,7 +246,7 @@ export const projectsData = [
     ],
     github: "https://github.com/foolais/ImagesSlider",
     demo: null,
-    images: Proyek7,
+    images: ProjectImagesSlider,
     type: "mobile" as "web" | "mobile",
   },
   {
@@ -245,7 +269,7 @@ export const projectsData = [
     ],
     github: "https://github.com/foolais/anime-movie-ts",
     demo: "https://anime-movie-ts.vercel.app",
-    images: Proyek1,
+    images: ProjectAnimeTs,
     type: "web" as "web" | "mobile",
   },
   {
@@ -268,7 +292,7 @@ export const projectsData = [
     ],
     github: "https://github.com/foolais/react-survey",
     demo: "https://react-survey-app-eight.vercel.app/",
-    images: Proyek2,
+    images: ProjectSurvey,
     type: "web" as "web" | "mobile",
   },
   {
@@ -291,7 +315,7 @@ export const projectsData = [
     ],
     github: "https://github.com/foolais/foolais-store-frontend",
     demo: "https://foolais-store.vercel.app/",
-    images: Proyek3,
+    images: ProjectFeStore,
     type: "web" as "web" | "mobile",
   },
   {
@@ -319,7 +343,7 @@ export const projectsData = [
     ],
     github: "https://github.com/foolais/store-api",
     demo: "https://foolais-store-api.vercel.app/",
-    images: Proyek4,
+    images: ProjectBeStore,
     type: "web" as "web" | "mobile",
   },
   {
@@ -342,7 +366,7 @@ export const projectsData = [
     ],
     github: "https://github.com/foolais/ceki-game",
     demo: "https://ceki-game.vercel.app/",
-    images: Proyek5,
+    images: ProjectCekiGame,
     type: "web" as "web" | "mobile",
   },
   {
@@ -365,7 +389,7 @@ export const projectsData = [
     ],
     github: "https://github.com/foolais/kerjakan",
     demo: "https://kerjakan.netlify.app/",
-    images: Proyek6,
+    images: ProjectKerjakan,
     type: "web" as "web" | "mobile",
   },
 ];
