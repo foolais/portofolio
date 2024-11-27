@@ -36,11 +36,16 @@ const MainLayout = memo(() => {
 
   const handleNavClick = useCallback(
     (name: string) => {
-      const navigatePath = name.toLocaleLowerCase() as Nav;
-      topRef.current?.scrollIntoView({ behavior: "smooth" });
+      console.log({ name });
+      if (name === "theme") {
+        topRef.current?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        const navigatePath = name.toLocaleLowerCase() as Nav;
+        topRef.current?.scrollIntoView({ behavior: "smooth" });
 
-      if (navigatePath !== currentNav) {
-        setCurrentNav(navigatePath);
+        if (navigatePath !== currentNav) {
+          setCurrentNav(navigatePath);
+        }
       }
     },
     [currentNav]
@@ -55,7 +60,10 @@ const MainLayout = memo(() => {
     [handleNavClick]
   );
   const memoizedProfileAvatar = useMemo(() => <ProfileAvatar />, []);
-  const memoizedNavTheme = useMemo(() => <NavTheme />, []);
+  const memoizedNavTheme = useMemo(
+    () => <NavTheme handleNavClick={handleNavClick} />,
+    [handleNavClick]
+  );
 
   const animateMotion = {
     initial: { opacity: 0, x: -40 },

@@ -4,7 +4,11 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { animated } from "@/lib/utils";
 
-const NavTheme = () => {
+interface NavThemeProps {
+  handleNavClick: (name: string) => void;
+}
+
+const NavTheme = ({ handleNavClick }: NavThemeProps) => {
   const { theme, setTheme } = useTheme();
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
@@ -12,6 +16,7 @@ const NavTheme = () => {
     const newIsDarkMode = !isDarkMode;
     setIsDarkMode(newIsDarkMode);
     setTheme(newIsDarkMode ? "dark" : "light");
+    handleNavClick("theme");
   };
 
   useEffect(() => {
