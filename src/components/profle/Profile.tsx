@@ -2,9 +2,9 @@ import { Button } from "../ui/button";
 import { Download } from "lucide-react";
 import { Separator } from "../ui/separator";
 import { lazy, Suspense } from "react";
-import { useMediaQuery } from "react-responsive";
 import { useNavigation } from "@/context/navigation-provider";
 import { motion } from "framer-motion";
+import { getMobileWidth } from "@/lib/utils";
 
 const ProfileHero = lazy(() => import("./ProfileHero"));
 const ProfileDescription = lazy(() => import("./ProfileDescription"));
@@ -16,7 +16,7 @@ interface ProfileProps {
 }
 
 const Profile: React.FC<ProfileProps> = ({ isWithHero = false }) => {
-  const isMobile = useMediaQuery({ query: "(max-width: 830px)" });
+  const isMobile = getMobileWidth();
   const { currentNav } = useNavigation();
 
   const animateMotion = {

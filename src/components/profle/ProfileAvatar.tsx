@@ -3,10 +3,10 @@ import { Avatar, AvatarImage } from "../ui/avatar";
 import { memo } from "react";
 import { KeepAlive } from "keepalive-for-react";
 import { motion } from "framer-motion";
-import { useMediaQuery } from "react-responsive";
+import { getMobileWidth } from "@/lib/utils";
 
 const ProfileAvatar = memo(() => {
-  const isMobile = useMediaQuery({ query: "(max-width: 830px)" });
+  const isMobile = getMobileWidth();
   const animateMotion = {
     initial: isMobile ? { opacity: 0, y: -40 } : { opacity: 0, x: -40 },
     exit: isMobile ? { opacity: 0, y: -40 } : { opacity: 0, x: -40 },
