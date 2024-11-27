@@ -12,6 +12,7 @@ import { Separator } from "../ui/separator";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "../../context/theme-provider";
 import { useNavigation } from "@/context/navigation-provider";
+import { motion } from "framer-motion";
 
 interface Props {
   className?: string;
@@ -45,8 +46,16 @@ const Navbar = ({ className, handleNavClick }: Props) => {
     "md:flex-row md:gap-3 md:w-full md:justify-start md:bg-transparent md:p-0 md:rounded-lg md:hover:bg-secondary md:hover:scale-100"
   );
 
+  const animateMotion = {
+    initial: { opacity: 0, y: 40 },
+    exit: { opacity: 0, y: 40 },
+    animate: { opacity: 1, y: 0 },
+    transition: { duration: 0.5, ease: "easeInOut", delay: 0.2 },
+  };
+
   return (
-    <div
+    <motion.div
+      {...animateMotion}
       className={cn(
         className,
         "fixed bottom-0 left-0 right-0 md:static z-30",
@@ -97,7 +106,7 @@ const Navbar = ({ className, handleNavClick }: Props) => {
           </Button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
