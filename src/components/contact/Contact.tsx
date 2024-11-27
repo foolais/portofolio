@@ -6,14 +6,17 @@ import { toast, Toaster } from "sonner";
 import { Title } from "../title";
 import { animated, cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { useNavigation } from "@/context/navigation-provider";
 
 interface ContactProps {
   isInSideNav?: boolean;
 }
 
 const Contact: React.FC<ContactProps> = ({ isInSideNav = true }) => {
+  const { currentNav } = useNavigation();
+
   const animateMotion = {
-    initial: isInSideNav ? { opacity: 0, x: -40 } : { opacity: 0, y: -40 },
+    initial: isInSideNav ? { opacity: 0, x: -40 } : { opacity: 0, y: -20 },
     whileHover: { scale: 1.1, transition: { duration: 0.3 } },
     whileTap: { scale: 0.95, transition: { duration: 0.3 } },
     transition: { duration: 0.3, ease: "easeInOut" },
@@ -40,7 +43,14 @@ const Contact: React.FC<ContactProps> = ({ isInSideNav = true }) => {
 
   return (
     <div className={isInSideNav ? "" : "mt-6"}>
-      {!isInSideNav && <Title text="Contact" />}
+      {!isInSideNav && (
+        <motion.div
+          {...animateMotion}
+          animate={animated(currentNav === "home" ? 11 : 16, "top")}
+        >
+          <Title text="Contact" />
+        </motion.div>
+      )}
       <div
         className={cn(
           "flex flex-wrap",
@@ -51,7 +61,11 @@ const Contact: React.FC<ContactProps> = ({ isInSideNav = true }) => {
           <motion.div
             {...animateMotion}
             animate={animated(
-              isInSideNav ? 4 + index : 4,
+              isInSideNav
+                ? 4 + index
+                : currentNav === "home"
+                ? 12 + index
+                : 17 + index,
               isInSideNav ? "left" : "top"
             )}
             key={index}

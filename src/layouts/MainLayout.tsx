@@ -59,7 +59,6 @@ const MainLayout = memo(() => {
 
   const animateMotion = {
     initial: { opacity: 0, x: -40 },
-    exit: { opacity: 0, x: -40 },
     transition: {
       duration: 0.5,
       ease: "easeInOut",

@@ -36,3 +36,8 @@ export const animated = (index: number, type: "left" | "top") => {
   }
   return initial;
 };
+
+export const animateMotion = {
+  initial: { opacity: 0, y: -20 },
+  transition: { duration: 0.5, ease: "easeInOut" },
+};

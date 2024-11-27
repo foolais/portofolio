@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 const ProfileName: React.FC<{ isFullName: boolean }> = ({ isFullName }) => {
   const animateMotion = {
-    initial: { opacity: 0, y: -40 },
+    initial: { opacity: 0, y: -20 },
     animate: { opacity: 1, y: 0 },
   };
 
@@ -27,7 +27,7 @@ const ProfileName: React.FC<{ isFullName: boolean }> = ({ isFullName }) => {
         {isFullName ? "Esya Nasution" : ""}
       </motion.h1>
       <motion.div
-        initial={{ opacity: 0, y: -40 }}
+        initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut", delay: 0.4 }}
         className="text-sm sm:text-xl lg:text-2xl font-bold md:mt-1 sm:tracking-wide leading-5 flex gap-2 items-center"

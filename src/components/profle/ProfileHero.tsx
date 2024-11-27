@@ -1,7 +1,8 @@
 import { BlueSky, NightStar } from "@/assets/images/images";
-import { cn } from "@/lib/utils";
+import { animated, animateMotion, cn } from "@/lib/utils";
 import { useTheme } from "../../context/theme-provider";
 import { lazy } from "react";
+import { motion } from "framer-motion";
 
 const ProfileAvatar = lazy(() => import("./ProfileAvatar"));
 const ProfileName = lazy(() => import("./ProfileName"));
@@ -13,7 +14,11 @@ const ProfileHero: React.FC<{ isFullName?: boolean }> = ({
 
   return (
     <div className="w-full relative pt-10">
-      <div className="w-full h-full absolute top-0 z-0 shadow">
+      <motion.div
+        {...animateMotion}
+        animate={animated(1, "top")}
+        className="w-full h-full absolute top-0 z-0 shadow"
+      >
         <img
           src={theme === "dark" ? NightStar : BlueSky}
           alt="NightStar"
@@ -21,7 +26,7 @@ const ProfileHero: React.FC<{ isFullName?: boolean }> = ({
           loading="lazy"
         />
         <div className="w-full h-[105%] absolute top-0 z-10 gradient"></div>
-      </div>
+      </motion.div>
       <div className={cn("px-4 items-end flex gap-4 z-20")}>
         <ProfileAvatar key="profile-avatar" />
         <ProfileName isFullName={isFullName} />

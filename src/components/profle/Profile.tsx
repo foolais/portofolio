@@ -4,7 +4,7 @@ import { Separator } from "../ui/separator";
 import { lazy, Suspense } from "react";
 import { useNavigation } from "@/context/navigation-provider";
 import { motion } from "framer-motion";
-import { getMobileWidth } from "@/lib/utils";
+import { animated, getMobileWidth } from "@/lib/utils";
 
 const ProfileHero = lazy(() => import("./ProfileHero"));
 const ProfileDescription = lazy(() => import("./ProfileDescription"));
@@ -20,12 +20,10 @@ const Profile: React.FC<ProfileProps> = ({ isWithHero = false }) => {
   const { currentNav } = useNavigation();
 
   const animateMotion = {
-    initial: { opacity: 0, y: -40 },
-    animate: { opacity: 1, y: 0 },
-    exit: { opacity: 0, y: -40 },
+    initial: { opacity: 0, y: -20 },
     whileHover: { scale: 1.1, transition: { durantion: 0.3 } },
     whileTap: { scale: 0.95, transition: { duration: 0.3 } },
-    transition: { duration: 0.5, ease: "easeInOut", delay: 0.6 },
+    transition: { duration: 0.5, ease: "easeInOut" },
   };
 
   return (
@@ -36,13 +34,21 @@ const Profile: React.FC<ProfileProps> = ({ isWithHero = false }) => {
         ) : (
           <div className="w-full">
             <ProfileName isFullName={true} />
-            <Separator />
+            <motion.span
+              {...animateMotion}
+              animate={animated(2, "top")}
+              className="w-full h-full"
+            >
+              <Separator />
+            </motion.span>
           </div>
         )}
         <div>
           {currentNav === "profile" && <ProfileDescription />}
           <motion.div
             {...animateMotion}
+            initial={{ opacity: 0, y: -20 }}
+            animate={animated(currentNav === "home" ? 3 : 5, "top")}
             className={`${isWithHero && "ml-0 sm:ml-11 md:ml-0"} mt-4 w-max`}
           >
             <Button className="flex items-center justify-center gap-2 px-4">

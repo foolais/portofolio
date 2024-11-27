@@ -9,7 +9,7 @@ const ProfileAvatar = memo(() => {
   const isMobile = getMobileWidth();
   console.log({ isMobile });
   const animateMotion = {
-    initial: isMobile ? { opacity: 0, y: -40 } : { opacity: 0, x: -40 },
+    initial: isMobile ? { opacity: 0, y: -20 } : { opacity: 0, x: -40 },
     whileHover: { scale: 1.1 },
     whileTap: { scale: 0.95 },
     transition: { duration: 0.5, ease: "easeInOut" },
