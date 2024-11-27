@@ -1,5 +1,5 @@
 import { navbarData } from "@/data/data";
-import { cn } from "@/lib/utils";
+import { animated, cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 import { Separator } from "../ui/separator";
@@ -15,9 +15,9 @@ const Sidenav = ({ handleNavClick, currentNav }: Props) => {
   const animateMotion = {
     initial: { opacity: 0, x: -40 },
     exit: { opacity: 0, x: -40 },
-    animate: { opacity: 1, x: 0 },
     whileHover: { scale: 1.1, transition: { duration: 0.3 } },
     whileTap: { scale: 0.95, transition: { duration: 0.3 } },
+    transition: { duration: 0.4, ease: "easeInOut" },
   };
 
   return (
@@ -25,11 +25,7 @@ const Sidenav = ({ handleNavClick, currentNav }: Props) => {
       {navbarData.map(({ icon: Icon, name }, index) => (
         <motion.div
           {...animateMotion}
-          transition={{
-            duration: 0.5,
-            ease: "easeInOut",
-            delay: (index + 1) * 0.2,
-          }}
+          animate={animated(index + 1, "sidenav", true)}
           key={index}
           className={cn(
             "flex items-center justify-between w-full py-1 px-3 hover:bg-secondary rounded-md cursor-pointer",
@@ -63,11 +59,7 @@ const Sidenav = ({ handleNavClick, currentNav }: Props) => {
         {...animateMotion}
         whileHover={{ scale: 1 }}
         whileTap={{ scale: 1 }}
-        transition={{
-          duration: 0.5,
-          ease: "easeInOut",
-          delay: 4 * 0.2,
-        }}
+        animate={animated(4, "sidenav", true)}
       >
         <Separator className="my-2" />
       </motion.div>

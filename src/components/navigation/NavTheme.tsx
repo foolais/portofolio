@@ -1,7 +1,8 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "../../context/theme-provider";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
+import { animated } from "@/lib/utils";
 
 const NavTheme = () => {
   const { theme, setTheme } = useTheme();
@@ -19,22 +20,21 @@ const NavTheme = () => {
   }, []);
 
   const animateMotion = {
-    initial: { opacity: 0, x: -40 },
-    exit: { opacity: 0, x: -40 },
-    animate: { opacity: 1, x: 0 },
+    initial: {
+      opacity: 0,
+      x: -40,
+    },
     whileHover: { scale: 1.1, transition: { duration: 0.3 } },
     whileTap: { scale: 0.95, transition: { duration: 0.2 } },
-    transition: {
-      duration: 0.5,
-      ease: "easeInOut",
-      delay: 7 * 0.2,
-    },
+    transition: { duration: 0.3, ease: "easeInOut" },
   };
 
   return (
     <div className="w-full">
       <motion.div
         {...animateMotion}
+        animate={animated(8, "sidenav", true)}
+        layout
         className="bg-primary text-background flex items-center  gap-3 px-3 py-2 rounded-md cursor-pointer hover:bg-opacity-50 mt-2"
         onClick={handleChangeTheme}
       >
