@@ -212,6 +212,10 @@ export const projectsData = [
       "The Slider Mobile App is a React Native project featuring two sliders on a single screen, where images automatically slide, while videos are displayed without sliding functionality.",
     technologies: [
       {
+        name: "TypeScript",
+        image: TS,
+      },
+      {
         name: "React Native",
         image: React,
       },

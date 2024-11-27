@@ -5,12 +5,21 @@ import { SocialMediaProps } from "@/types/types";
 import { toast, Toaster } from "sonner";
 import { Title } from "../title";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 
 interface ContactProps {
   isInSideNav?: Boolean;
 }
 
 const Contact: React.FC<ContactProps> = ({ isInSideNav = true }) => {
+  const animateMotion = {
+    initial: isInSideNav ? { opacity: 0, x: -40 } : { opacity: 0, y: -40 },
+    exit: isInSideNav ? { opacity: 0, x: -40 } : { opacity: 0, y: -40 },
+    animate: isInSideNav ? { opacity: 1, x: 0 } : { opacity: 1, y: 0 },
+    whileHover: { scale: 1.1, transition: { duration: 0.3 } },
+    whileTap: { scale: 0.95, transition: { duration: 0.3 } },
+  };
+
   const onAction = (data: SocialMediaProps) => {
     const { type, url, text } = data;
     if (type === "Gmail") {
@@ -40,7 +49,13 @@ const Contact: React.FC<ContactProps> = ({ isInSideNav = true }) => {
         )}
       >
         {socialMediaData.map(({ icon: Icon, ...data }, index) => (
-          <div
+          <motion.div
+            {...animateMotion}
+            transition={
+              isInSideNav
+                ? { duration: 0.5, ease: "easeInOut", delay: (4 + index) * 0.2 }
+                : { delay: index * 0.2 }
+            }
             key={index}
             className={cn(
               "bg-background flex items-center justify-between gap-3 px-3 py-1 hover:bg-secondary rounded-md cursor-pointer",
@@ -63,7 +78,7 @@ const Contact: React.FC<ContactProps> = ({ isInSideNav = true }) => {
                 <ArrowUpRight size={18} />
               )}
             </Button>
-          </div>
+          </motion.div>
         ))}
       </div>
       <Toaster

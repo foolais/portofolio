@@ -8,6 +8,7 @@ import { Nav } from "@/types/types";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { useTheme } from "@/context/theme-provider";
 import { Separator } from "@/components/ui/separator";
+import { motion } from "framer-motion";
 
 const Layout = memo(() => {
   const { currentNav } = useNavigation();
@@ -55,6 +56,17 @@ const MainLayout = memo(() => {
   const memoizedProfileAvatar = useMemo(() => <ProfileAvatar />, []);
   const memoizedNavTheme = useMemo(() => <NavTheme />, []);
 
+  const animateMotion = {
+    initial: { opacity: 0, x: -40 },
+    exit: { opacity: 0, x: -40 },
+    animate: { opacity: 1, x: 0 },
+    transition: {
+      duration: 0.5,
+      ease: "easeInOut",
+      delay: 7 * 0.2,
+    },
+  };
+
   return (
     <div className="md:flex md:flex-row md:justify-between md:p-8 max-h-screen md:gap-4 lg:max-w-[85%] xl:max-w-[55%] mx-auto relative">
       <div className="flex-col hidden md:flex md:items-center md:max-w-[200px]">
@@ -63,7 +75,9 @@ const MainLayout = memo(() => {
           @wahyu_esya
         </span>
         {memoizedSidenav}
-        <Separator className="my-2" />
+        <motion.div {...animateMotion} className="w-full">
+          <Separator className="my-2" />
+        </motion.div>
         {memoizedNavTheme}
       </div>
       <ScrollArea className="md:w-auto md:min-w-[575px] lg:min-w-[700px] md:max-h-[95vh] md:rounded-lg md:border-primary">

@@ -4,6 +4,7 @@ import { Separator } from "../ui/separator";
 import { lazy, Suspense } from "react";
 import { useMediaQuery } from "react-responsive";
 import { useNavigation } from "@/context/navigation-provider";
+import { motion } from "framer-motion";
 
 const ProfileHero = lazy(() => import("./ProfileHero"));
 const ProfileDescription = lazy(() => import("./ProfileDescription"));
@@ -18,6 +19,15 @@ const Profile: React.FC<ProfileProps> = ({ isWithHero = false }) => {
   const isMobile = useMediaQuery({ query: "(max-width: 830px)" });
   const { currentNav } = useNavigation();
 
+  const animateMotion = {
+    initial: { opacity: 0, y: -40 },
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -40 },
+    whileHover: { scale: 1.1, transition: { durantion: 0.3 } },
+    whileTap: { scale: 0.95, transition: { duration: 0.3 } },
+    transition: { duration: 0.5, ease: "easeInOut", delay: 0.6 },
+  };
+
   return (
     <div className="max-h-screen">
       <Suspense>
@@ -31,12 +41,15 @@ const Profile: React.FC<ProfileProps> = ({ isWithHero = false }) => {
         )}
         <div>
           {currentNav === "profile" && <ProfileDescription />}
-          <div className={`${isWithHero && "ml-0 sm:ml-11 md:ml-0"} mt-4 `}>
+          <motion.div
+            {...animateMotion}
+            className={`${isWithHero && "ml-0 sm:ml-11 md:ml-0"} mt-4 w-max`}
+          >
             <Button className="flex items-center justify-center gap-2 px-4">
               <span className="text-base font-bold">Resume</span>
               <Download color="hsl(var(--background))" size={20} />
             </Button>
-          </div>
+          </motion.div>
         </div>
       </Suspense>
     </div>

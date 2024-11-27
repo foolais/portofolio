@@ -4,6 +4,7 @@ import { Button } from "../ui/button";
 import { ArrowRight } from "lucide-react";
 import { Separator } from "../ui/separator";
 import Contact from "../contact/Contact";
+import { motion } from "framer-motion";
 
 interface Props {
   handleNavClick: (name: string) => void;
@@ -11,10 +12,24 @@ interface Props {
 }
 
 const Sidenav = ({ handleNavClick, currentNav }: Props) => {
+  const animateMotion = {
+    initial: { opacity: 0, x: -40 },
+    exit: { opacity: 0, x: -40 },
+    animate: { opacity: 1, x: 0 },
+    whileHover: { scale: 1.1, transition: { duration: 0.3 } },
+    whileTap: { scale: 0.95, transition: { duration: 0.3 } },
+  };
+
   return (
     <div className="flex-col w-[200px] gap-1 hidden md:flex">
       {navbarData.map(({ icon: Icon, name }, index) => (
-        <div
+        <motion.div
+          {...animateMotion}
+          transition={{
+            duration: 0.5,
+            ease: "easeInOut",
+            delay: (index + 1) * 0.2,
+          }}
           key={index}
           className={cn(
             "flex items-center justify-between w-full py-1 px-3 hover:bg-secondary rounded-md cursor-pointer",
@@ -42,9 +57,20 @@ const Sidenav = ({ handleNavClick, currentNav }: Props) => {
           >
             <ArrowRight size={18} />
           </Button>
-        </div>
+        </motion.div>
       ))}
-      <Separator className="my-2" />
+      <motion.div
+        {...animateMotion}
+        whileHover={{ scale: 1 }}
+        whileTap={{ scale: 1 }}
+        transition={{
+          duration: 0.5,
+          ease: "easeInOut",
+          delay: 4 * 0.2,
+        }}
+      >
+        <Separator className="my-2" />
+      </motion.div>
       <Contact />
     </div>
   );
