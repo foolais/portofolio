@@ -18,7 +18,7 @@ const ProfileAvatar = memo(() => {
   return (
     <motion.div
       {...animateMotion}
-      animate={animated(0, "mobile", false, isMobile)}
+      animate={animated(1, isMobile ? "top" : "left")}
       className="relative"
     >
       <Avatar className="border-b-4 border-primary w-24 h-24 sm:w-40 sm:h-40 md:w-32 md:h-32">

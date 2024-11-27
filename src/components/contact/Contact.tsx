@@ -52,8 +52,7 @@ const Contact: React.FC<ContactProps> = ({ isInSideNav = true }) => {
             {...animateMotion}
             animate={animated(
               isInSideNav ? 4 + index : 4,
-              "sidenav",
-              isInSideNav
+              isInSideNav ? "left" : "top"
             )}
             key={index}
             className={cn(

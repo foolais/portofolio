@@ -9,6 +9,7 @@ import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-w
 import { useTheme } from "@/context/theme-provider";
 import { Separator } from "@/components/ui/separator";
 import { motion } from "framer-motion";
+import { animated } from "@/lib/utils";
 
 const Layout = memo(() => {
   const { currentNav } = useNavigation();
@@ -59,11 +60,9 @@ const MainLayout = memo(() => {
   const animateMotion = {
     initial: { opacity: 0, x: -40 },
     exit: { opacity: 0, x: -40 },
-    animate: { opacity: 1, x: 0 },
     transition: {
       duration: 0.5,
       ease: "easeInOut",
-      delay: 7 * 0.2,
     },
   };
 
@@ -71,11 +70,19 @@ const MainLayout = memo(() => {
     <div className="md:flex md:flex-row md:justify-between md:p-8 max-h-screen md:gap-4 lg:max-w-[85%] xl:max-w-[55%] mx-auto relative">
       <div className="flex-col hidden md:flex md:items-center md:max-w-[200px]">
         {memoizedProfileAvatar}
-        <span className="font-semibold mt-1 mb-6 bg-primary bg-clip-text text-transparent">
+        <motion.span
+          {...animateMotion}
+          animate={animated(1.5, "left")}
+          className="font-semibold mt-1 mb-6 bg-primary bg-clip-text text-transparent"
+        >
           @wahyu_esya
-        </span>
+        </motion.span>
         {memoizedSidenav}
-        <motion.div {...animateMotion} className="w-full">
+        <motion.div
+          {...animateMotion}
+          animate={animated(7, "left")}
+          className="w-full"
+        >
           <Separator className="my-2" />
         </motion.div>
         {memoizedNavTheme}

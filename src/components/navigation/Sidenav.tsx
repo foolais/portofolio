@@ -25,7 +25,7 @@ const Sidenav = ({ handleNavClick, currentNav }: Props) => {
       {navbarData.map(({ icon: Icon, name }, index) => (
         <motion.div
           {...animateMotion}
-          animate={animated(index + 1, "sidenav", true)}
+          animate={animated(index + 1, "left")}
           key={index}
           className={cn(
             "flex items-center justify-between w-full py-1 px-3 hover:bg-secondary rounded-md cursor-pointer",
@@ -59,7 +59,7 @@ const Sidenav = ({ handleNavClick, currentNav }: Props) => {
         {...animateMotion}
         whileHover={{ scale: 1 }}
         whileTap={{ scale: 1 }}
-        animate={animated(4, "sidenav", true)}
+        animate={animated(4, "left")}
       >
         <Separator className="my-2" />
       </motion.div>

@@ -1,7 +1,7 @@
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "../../context/theme-provider";
 import { useEffect, useState } from "react";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { animated } from "@/lib/utils";
 
 const NavTheme = () => {
@@ -33,7 +33,7 @@ const NavTheme = () => {
     <div className="w-full">
       <motion.div
         {...animateMotion}
-        animate={animated(8, "sidenav", true)}
+        animate={animated(8, "left")}
         layout
         className="bg-primary text-background flex items-center  gap-3 px-3 py-2 rounded-md cursor-pointer hover:bg-opacity-50 mt-2"
         onClick={handleChangeTheme}
