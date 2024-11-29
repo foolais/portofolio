@@ -43,7 +43,7 @@ const ProjectCardHeader = memo(
           loading="lazy"
           className={cn(
             "rounded-xl min-h-[200px] max-h-[200px] min-w-[200px]",
-            type === "web" ? "object-cover" : "object-contain"
+            type === "web" ? "object-cover object-left-top" : "object-contain"
           )}
         />
       </CardHeader>
@@ -86,7 +86,7 @@ const ProjectCardFooter = memo(
             <Button
               size={"sm"}
               variant={"accent"}
-              className="flex items-center gap-1"
+              className="flex items-center gap-1 hover:scale-110 transition-all duration-300 ease-in-out"
             >
               <Github size={15} color="hsl(var(--primary))" />
               <p className="text-primary">Github</p>
@@ -94,7 +94,10 @@ const ProjectCardFooter = memo(
           </a>
           {demo && (
             <a href={demo} target="_blank" rel="noopener noreferrer">
-              <Button size={"sm"} className="flex items-center gap-1">
+              <Button
+                size={"sm"}
+                className="flex items-center gap-1 hover:scale-110 transition-all duration-300 ease-in-out"
+              >
                 <p>Demo</p>
                 <ArrowUpRight size={15} />
               </Button>
