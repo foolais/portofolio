@@ -245,7 +245,7 @@ export const projectsData = [
       },
     ],
     github: "https://github.com/foolais/ImagesSlider",
-    demo: null,
+    demo: "https://thisiswahyuesya.vercel.app/",
     images: ProjectImagesSlider,
     type: "mobile" as "web" | "mobile",
   },

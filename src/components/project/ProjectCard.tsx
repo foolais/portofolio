@@ -162,7 +162,7 @@ const ProjectCard = memo(({ project }: { project: ProjectProps }) => {
         }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
       >
-        <Card className="w-full cursor-default flex flex-col justify-between">
+        <Card className="w-full md:w-4/5 lg:w-full cursor-default flex flex-col justify-between">
           {memoizedHeader}
           {memoizedContent}
           {memoizedFooter}
