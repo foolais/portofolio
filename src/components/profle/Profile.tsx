@@ -1,10 +1,11 @@
 import { Button } from "../ui/button";
-import { Download } from "lucide-react";
+import { Download, LoaderCircle } from "lucide-react";
 import { Separator } from "../ui/separator";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 import { useNavigation } from "@/context/navigation-provider";
 import { motion } from "framer-motion";
 import { animated, getMobileWidth } from "@/lib/utils";
+import Resume from "../../assets/Resume_Wahyu Esya Nasution.pdf";
 
 const ProfileHero = lazy(() => import("./ProfileHero"));
 const ProfileDescription = lazy(() => import("./ProfileDescription"));
@@ -16,8 +17,25 @@ interface ProfileProps {
 }
 
 const Profile: React.FC<ProfileProps> = ({ isWithHero = false }) => {
+  const [isDownloading, setIsDownloading] = useState<boolean>(false);
   const isMobile = getMobileWidth();
   const { currentNav } = useNavigation();
+
+  const onResumeDownload = () => {
+    if (isDownloading) return;
+    try {
+      setIsDownloading(true);
+      const link = document.createElement("a");
+      link.href = Resume;
+      link.download = "Resume_Wahyu Esya Nasution.pdf";
+      link.click();
+    } catch (error) {
+      console.log({ error });
+      setIsDownloading(false);
+    } finally {
+      setTimeout(() => setIsDownloading(false), 1500);
+    }
+  };
 
   const animateMotion = {
     initial: { opacity: 0, y: -20 },
@@ -51,9 +69,25 @@ const Profile: React.FC<ProfileProps> = ({ isWithHero = false }) => {
             animate={animated(currentNav === "home" ? 3 : 5, "top")}
             className={`${isWithHero && "ml-0 sm:ml-11 md:ml-0"} mt-4 w-max`}
           >
-            <Button className="flex items-center justify-center gap-2 px-4">
-              <span className="text-base font-bold">Resume</span>
-              <Download color="hsl(var(--background))" size={20} />
+            <Button
+              className="flex items-center justify-center gap-2 px-4"
+              onClick={onResumeDownload}
+            >
+              {isDownloading ? (
+                <>
+                  <span className="text-base font-bold">Downloading</span>
+                  <LoaderCircle
+                    className="animate-spin"
+                    color="hsl(var(--background))"
+                    size={20}
+                  />
+                </>
+              ) : (
+                <>
+                  <span className="text-base font-bold">Resume</span>
+                  <Download color="hsl(var(--background))" size={20} />
+                </>
+              )}
             </Button>
           </motion.div>
         </div>

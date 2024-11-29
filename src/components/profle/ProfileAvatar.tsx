@@ -7,7 +7,6 @@ import { animated, getMobileWidth } from "@/lib/utils";
 
 const ProfileAvatar = memo(() => {
   const isMobile = getMobileWidth();
-  console.log({ isMobile });
   const animateMotion = {
     initial: isMobile ? { opacity: 0, y: -20 } : { opacity: 0, x: -40 },
     whileHover: { scale: 1.1 },

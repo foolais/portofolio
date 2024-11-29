@@ -36,7 +36,6 @@ const MainLayout = memo(() => {
 
   const handleNavClick = useCallback(
     (name: string) => {
-      console.log({ name });
       if (name === "theme") {
         topRef.current?.scrollIntoView({ behavior: "smooth" });
       } else {
