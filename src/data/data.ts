@@ -13,7 +13,9 @@ import {
   HTML,
   JS,
   MongoDB,
+  Next,
   Node,
+  Prisma,
   React,
   Sass,
   Tailwind,
@@ -29,6 +31,8 @@ import {
   ProjectBeStore,
   ProjectCekiGame,
   ProjectKerjakan,
+  ProjectUtilify,
+  ProjectMindOrbit,
 } from "@/assets/images/images";
 
 export const navbarData = [
@@ -168,6 +172,10 @@ export const techStackData = [
     image: React,
   },
   {
+    name: "Next.js",
+    image: Next,
+  },
+  {
     name: "Vue.js",
     image: Vue,
   },
@@ -182,6 +190,10 @@ export const techStackData = [
   {
     name: "MongoDB",
     image: MongoDB,
+  },
+  {
+    name: "Prisma",
+    image: Prisma,
   },
   {
     name: "Git",
@@ -207,6 +219,60 @@ export const educationData = [
 ];
 
 export const projectsData = [
+  {
+    title: "Mind Orbit",
+    description:
+      "This project is a responsive web application built with Next.js, TypeScript, and Prisma. It focuses on managing projects and tasks, with features like project creation, task organization, filtering, and user authentication.",
+    technologies: [
+      {
+        name: "Next.js",
+        image: Next,
+      },
+      {
+        name: "TypeScript",
+        image: TS,
+      },
+      {
+        name: "Tailwind CSS",
+        image: Tailwind,
+      },
+      {
+        name: "Prisma",
+        image: Prisma,
+      },
+    ],
+    github: "https://github.com/foolais/mind-orbit",
+    demo: "https://mind-orbit-rose.vercel.app/",
+    images: ProjectMindOrbit,
+    type: "web" as "web" | "mobile",
+  },
+  {
+    title: "Utilify",
+    description:
+      "This project is a web-based tool management system built with Next.js. It allows users to manage tools, track loans, and view history. Key features include user authentication, tool and loan management, search, pagination, and responsive UI components like tables, forms, and modals for easy interaction.",
+    technologies: [
+      {
+        name: "Next.js",
+        image: Next,
+      },
+      {
+        name: "TypeScript",
+        image: TS,
+      },
+      {
+        name: "Tailwind CSS",
+        image: Tailwind,
+      },
+      {
+        name: "Prisma",
+        image: Prisma,
+      },
+    ],
+    github: "https://github.com/foolais/utilify",
+    demo: "https://utilify-seven.vercel.app/",
+    images: ProjectUtilify,
+    type: "web" as "web" | "mobile",
+  },
   {
     title: "Portofolio",
     description:

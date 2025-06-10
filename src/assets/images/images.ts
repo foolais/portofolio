@@ -10,6 +10,8 @@ import ProjectFeStore from "./project-fe-store.jpg";
 import ProjectBeStore from "./project-be-store.jpg";
 import ProjectCekiGame from "./project-ceki-game.jpg";
 import ProjectKerjakan from "./project-kerjakan.jpg";
+import ProjectUtilify from "./project-utilify.jpg";
+import ProjectMindOrbit from "./project-mind-orbit.jpg";
 
 export {
   ProfilePicture,
@@ -24,4 +26,6 @@ export {
   ProjectBeStore,
   ProjectCekiGame,
   ProjectKerjakan,
+  ProjectUtilify,
+  ProjectMindOrbit,
 };
