@@ -12,6 +12,7 @@ import ProjectCekiGame from "./project-ceki-game.jpg";
 import ProjectKerjakan from "./project-kerjakan.jpg";
 import ProjectUtilify from "./project-utilify.jpg";
 import ProjectMindOrbit from "./project-mind-orbit.jpg";
+import ProjectWaroengUs from "./project-waroeng-us.jpeg";
 
 export {
   ProfilePicture,
@@ -28,4 +29,5 @@ export {
   ProjectKerjakan,
   ProjectUtilify,
   ProjectMindOrbit,
+  ProjectWaroengUs,
 };

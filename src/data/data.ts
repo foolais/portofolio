@@ -33,6 +33,7 @@ import {
   ProjectKerjakan,
   ProjectUtilify,
   ProjectMindOrbit,
+  ProjectWaroengUs,
 } from "@/assets/images/images";
 
 export const navbarData = [
@@ -219,6 +220,33 @@ export const educationData = [
 ];
 
 export const projectsData = [
+  {
+    title: "Waroeng US",
+    description:
+      "A web POS system built using Next.js and Prisma with multi-store and multi-role capabilities. Roles are divided into three categories: super admin as developer, admin as business owner, and cashier.",
+    technologies: [
+      {
+        name: "Next.js",
+        image: Next,
+      },
+      {
+        name: "TypeScript",
+        image: TS,
+      },
+      {
+        name: "Tailwind CSS",
+        image: Tailwind,
+      },
+      {
+        name: "Prisma",
+        image: Prisma,
+      },
+    ],
+    github: "https://github.com/foolais/waroeng-us",
+    demo: "https://waroeng-us.vercel.app/",
+    images: ProjectWaroengUs,
+    type: "web" as "web" | "mobile",
+  },
   {
     title: "Mind Orbit",
     description:
