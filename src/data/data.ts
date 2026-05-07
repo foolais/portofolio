@@ -21,6 +21,7 @@ import {
   Tailwind,
   TS,
   Vue,
+  Supabase,
 } from "@/assets/icons/tech";
 import {
   ProjectPortofolio,
@@ -34,6 +35,8 @@ import {
   ProjectUtilify,
   ProjectMindOrbit,
   ProjectWaroengUs,
+  ProjectQueueOrbit,
+  ProjectMoneyOrbit,
 } from "@/assets/images/images";
 
 export const navbarData = [
@@ -79,11 +82,10 @@ export const jobData = [
     date: "Dec 2022 - Dec 2023",
     location: "Yogyakarta",
     description: [
-      "Implementing application using Vue.js framework and Vuetify.",
-      "Developing a dynamic client configuration for enhanced adaptability and user interaction.",
-      "Developing front-end notification alerts using a service worker for seamless and responsive user interactions.",
-      "Fixing and discovering bugs while enhancing the application.",
-      "Collaborated with team members to improve and enhance the application.",
+      "Developed and maintained responsive web applications using Vue.js and Vuetify, improving user experience and interface consistency",
+      "Built dynamic client configuration systems for multi-client usage, improving flexibility and customization",
+      "Implemented real-time notification systems using service workers to enhance user engagement and responsiveness",
+      " Identified and resolved performance issues while collaborating with cross-functional teams to deliver scalable and maintainable solutions",
     ],
     technologies: [
       {
@@ -110,13 +112,13 @@ export const jobData = [
   },
   {
     company: "PT Widya Inovasi Indonesia",
-    position: "Intern Frontend Developer",
+    position: "Frontend Developer Intern ",
     date: "Feb 2022 - Aug 2022",
     location: "Yogyakarta",
     description: [
-      "Developing a web dashboard for order an API Key using React JS.",
-      "Implementing Tailwind CSS for styling website.",
-      "Implementing consume REST API for communication with backend.",
+      "Built a full-featured API ordering platform for face detection services from scratch using React.js and Tailwind CSS,delivering a responsive and user-friendly interface",
+      "Integrated RESTful APIs for efficient data flow and system reliability",
+      "Collaborated with cross-functional teams to deliver a production-ready application",
     ],
     technologies: [
       {
@@ -197,6 +199,10 @@ export const techStackData = [
     image: Prisma,
   },
   {
+    name: "Supabase",
+    image: Supabase,
+  },
+  {
     name: "Git",
     image: Git,
   },
@@ -204,9 +210,9 @@ export const techStackData = [
 
 export const educationData = [
   {
-    name: "Binus Online University",
+    name: "Binus University",
     location: "Online",
-    date: "Mei 2023 - Current",
+    date: "Mei 2023 - Mei 2026",
     major: "Computer Science",
     degree: "Bachelor Degree",
   },
@@ -220,6 +226,60 @@ export const educationData = [
 ];
 
 export const projectsData = [
+  {
+    title: "Money Orbit",
+    description:
+      "A personal finance tracker with secure authentication and real-time data visualization for income and expense analytics",
+    technologies: [
+      {
+        name: "Next.js",
+        image: Next,
+      },
+      {
+        name: "TypeScript",
+        image: TS,
+      },
+      {
+        name: "Tailwind CSS",
+        image: Tailwind,
+      },
+      {
+        name: "Supabase",
+        image: Supabase,
+      },
+    ],
+    github: "https://github.com/foolais/moneyOrbit",
+    demo: "https://money-orbit.edgeone.dev/home",
+    images: ProjectMoneyOrbit,
+    type: "web" as "web" | "mobile",
+  },
+  {
+    title: "Queue Orbit",
+    description:
+      "A real-time queue management system using Supabase Realtime to provide instant updates for called names",
+    technologies: [
+      {
+        name: "Next.js",
+        image: Next,
+      },
+      {
+        name: "TypeScript",
+        image: TS,
+      },
+      {
+        name: "Tailwind CSS",
+        image: Tailwind,
+      },
+      {
+        name: "Supabase",
+        image: Supabase,
+      },
+    ],
+    github: "https://github.com/foolais/fe-queue-orbit",
+    demo: "https://fe-queue-orbit.edgeone.dev/dashboard",
+    images: ProjectQueueOrbit,
+    type: "web" as "web" | "mobile",
+  },
   {
     title: "Waroeng US",
     description:

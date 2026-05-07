@@ -5,7 +5,7 @@ import { lazy, Suspense, useState } from "react";
 import { useNavigation } from "@/context/navigation-provider";
 import { motion } from "framer-motion";
 import { animated, getMobileWidth } from "@/lib/utils";
-import Resume from "../../assets/Resume_Wahyu Esya Nasution.pdf";
+import Resume from "../../assets/CV_Wahyu Esya Nasution.pdf";
 
 const ProfileHero = lazy(() => import("./ProfileHero"));
 const ProfileDescription = lazy(() => import("./ProfileDescription"));

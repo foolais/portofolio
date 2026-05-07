@@ -12,6 +12,7 @@ import Express from "./express.svg";
 import MongoDB from "./mongodb.svg";
 import Prisma from "./prisma.svg";
 import Git from "./git.svg";
+import Supabase from "./supabase.svg";
 
 export {
   HTML,
@@ -28,4 +29,5 @@ export {
   MongoDB,
   Prisma,
   Git,
+  Supabase,
 };

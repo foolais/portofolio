@@ -17,15 +17,24 @@ const ProfileDescription = memo(() => {
         animate={animated(3, "top")}
         className="text-sm md:text-base leading-5 tracking-wide mb-1.5"
       >
-        A <span className={coloredText}>frontend developer </span> based in{" "}
-        <span className={coloredText}> Yogyakarta</span>, Indonesia, with{" "}
+        <span className={coloredText}>Fresh Graduate in Computer Science </span>{" "}
+        with{" "}
+        <span className={coloredText}>
+          {" "}
+          over 1 years of professional experience
+        </span>
+        , as a Frontend Developer{" "}
         <span className={coloredText}>1 year of experience</span>.
       </motion.p>
       <motion.p {...animateMotion} animate={animated(4, "top")}>
-        Passionate about crafting intuitive web applications, I specialize in
-        <span className={coloredText}> React.js</span> and{" "}
-        <span className={coloredText}>Vue.js</span>. I'm skilled at
-        problem-solving and always eager to learn new technologies.
+        Proficient in building high-performance web applications using React.js,
+        Vue.js, and Next.js.
+        <span className={coloredText}>
+          {" "}
+          React.js, Vue.js, and Next.js.{" "}
+        </span>{" "}
+        Skilled in developing real-time systems and complex business logic, with
+        a strong focus on clean code and intuitive user experiences
       </motion.p>
     </div>
   );
