@@ -37,6 +37,7 @@ import {
   ProjectWaroengUs,
   ProjectQueueOrbit,
   ProjectMoneyOrbit,
+  ProjectKosongSembilan,
 } from "@/assets/images/images";
 
 export const navbarData = [
@@ -227,6 +228,33 @@ export const educationData = [
 
 export const projectsData = [
   {
+    title: "Kosong Sembilan Village",
+    description:
+      "A neighborhood management app featuring secure authentication and statistics for tracking and categorizing local residents and temporary renters.",
+    technologies: [
+      {
+        name: "Next.js",
+        image: Next,
+      },
+      {
+        name: "TypeScript",
+        image: TS,
+      },
+      {
+        name: "Tailwind CSS",
+        image: Tailwind,
+      },
+      {
+        name: "MongoDB",
+        image: MongoDB,
+      },
+    ],
+    github: null,
+    demo: null,
+    images: ProjectKosongSembilan,
+    type: "web" as "web" | "mobile",
+  },
+  {
     title: "Money Orbit",
     description:
       "A personal finance tracker with secure authentication and real-time data visualization for income and expense analytics",
@@ -337,7 +365,7 @@ export const projectsData = [
   {
     title: "Utilify",
     description:
-      "This project is a web-based tool management system built with Next.js. It allows users to manage tools, track loans, and view history. Key features include user authentication, tool and loan management, search, pagination, and responsive UI components like tables, forms, and modals for easy interaction.",
+      "A web-based tool management system built with Next.js, featuring user authentication, tool and loan management, search, pagination, and loan history.",
     technologies: [
       {
         name: "Next.js",

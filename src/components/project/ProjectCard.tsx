@@ -20,7 +20,7 @@ interface ProjectProps {
   description: string;
   images: string;
   technologies: TechProps[];
-  github: string;
+  github: string | null;
   demo: string | null;
   type: "web" | "mobile";
 }
@@ -43,7 +43,9 @@ const ProjectCardHeader = memo(
           loading="lazy"
           className={cn(
             "rounded-xl min-h-[200px] max-h-[200px] min-w-[200px]",
-            type === "web" ? "object-cover object-left-top" : "object-contain"
+            type === "web"
+              ? "object-contain rounded-xl bg-card-foreground"
+              : "object-contain"
           )}
         />
       </CardHeader>
@@ -78,20 +80,27 @@ const ProjectCardContent = memo(
 );
 
 const ProjectCardFooter = memo(
-  ({ github, demo }: { github: string; demo: string }) => {
+  ({ github, demo }: { github: string | null; demo: string | null }) => {
     return (
       <CardFooter className="w-full flex justify-end pt-4">
-        <div className="flex items-center justify-center gap-3">
-          <a href={github} target="_blank" rel="noopener noreferrer">
-            <Button
-              size={"sm"}
-              variant={"accent"}
-              className="flex items-center gap-1 hover:scale-110 transition-all duration-300 ease-in-out"
-            >
-              <Github size={15} color="hsl(var(--primary))" />
-              <p className="text-primary">Github</p>
-            </Button>
-          </a>
+        <div
+          className={cn(
+            "flex items-center justify-center gap-3",
+            !github && !demo && "h-8"
+          )}
+        >
+          {github && (
+            <a href={github} target="_blank" rel="noopener noreferrer">
+              <Button
+                size={"sm"}
+                variant={"accent"}
+                className="flex items-center gap-1 hover:scale-110 transition-all duration-300 ease-in-out"
+              >
+                <Github size={15} color="hsl(var(--primary))" />
+                <p className="text-primary">Github</p>
+              </Button>
+            </a>
+          )}
           {demo && (
             <a href={demo} target="_blank" rel="noopener noreferrer">
               <Button

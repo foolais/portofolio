@@ -15,6 +15,7 @@ import ProjectMindOrbit from "./project-mind-orbit.jpg";
 import ProjectWaroengUs from "./project-waroeng-us.jpeg";
 import ProjectQueueOrbit from "./project-queue_orbit.png";
 import ProjectMoneyOrbit from "./project-money-orbit.png";
+import ProjectKosongSembilan from "./project-kosong-sembilan.png";
 
 export {
   ProfilePicture,
@@ -34,4 +35,5 @@ export {
   ProjectWaroengUs,
   ProjectQueueOrbit,
   ProjectMoneyOrbit,
+  ProjectKosongSembilan,
 };
